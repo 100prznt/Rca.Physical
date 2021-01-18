@@ -28,15 +28,19 @@ namespace Rca.Physical
         [Symbol("s")]
         Second,
         [Dimension(PhysicalDimensions.Time)]
+        [Scaling(60)]
         [Symbol("min")]
         Minute,
         [Dimension(PhysicalDimensions.Time)]
+        [Scaling(3600)]
         [Symbol("h")]
         Hour,
         [Dimension(PhysicalDimensions.Time)]
+        [Scaling(86400)]
         [Symbol("d")]
         Day,
         [Dimension(PhysicalDimensions.Time)]
+        [Scaling(31536000)]
         [Symbol("a")]
         Year
     }
