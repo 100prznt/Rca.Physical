@@ -13,6 +13,8 @@ namespace Rca.Physical
         [BaseUnit(PhysicalUnits.Pascal)]
         Pressure,
         [BaseUnit(PhysicalUnits.Volt)]
-        Voltage
+        Voltage,
+        [BaseUnit(PhysicalUnits.Seconds)]
+        Time
     }
 }
