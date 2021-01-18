@@ -23,6 +23,21 @@ namespace Rca.Physical
         Kelvin,
         [Dimension(PhysicalDimensions.Voltage)]
         [Symbol("V")]
-        Volt
+        Volt,
+        [Dimension(PhysicalDimensions.Time)]
+        [Symbol("s")]
+        Second,
+        [Dimension(PhysicalDimensions.Time)]
+        [Symbol("min")]
+        Minute,
+        [Dimension(PhysicalDimensions.Time)]
+        [Symbol("h")]
+        Hour,
+        [Dimension(PhysicalDimensions.Time)]
+        [Symbol("d")]
+        Day,
+        [Dimension(PhysicalDimensions.Time)]
+        [Symbol("a")]
+        Year
     }
 }
