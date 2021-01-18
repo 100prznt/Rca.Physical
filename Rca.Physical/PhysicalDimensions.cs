@@ -11,6 +11,8 @@ namespace Rca.Physical
         [BaseUnit(PhysicalUnits.Kelvin)]
         Temperature,
         [BaseUnit(PhysicalUnits.Pascal)]
-        Pressure
+        Pressure,
+        [BaseUnit(PhysicalUnits.Volt)]
+        Voltage
     }
 }
