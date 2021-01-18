@@ -20,6 +20,9 @@ namespace Rca.Physical
         Celsius,
         [Dimension(PhysicalDimensions.Temperature)]
         [Symbol("K")]
-        Kelvin
+        Kelvin,
+        [Dimension(PhysicalDimensions.Voltage)]
+        [Symbol("V")]
+        Volt
     }
 }
