@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Converter.cs" />
     <Compile Include="Dimensions\BaseUnitAttribute.cs" />
+    <Compile Include="Dimensions\DimensionsExtension.cs" />
     <Compile Include="Exceptions\InvalidDimensionException.cs" />
     <Compile Include="PhysicalDimensions.cs" />
     <Compile Include="PhysicalUnits.cs" />

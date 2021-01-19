@@ -1,4 +1,6 @@
-﻿using Rca.Physical.Units;
+﻿using Rca.Physical.Dimensions;
+using Rca.Physical.Exceptions;
+using Rca.Physical.Units;
 using System;
 
 namespace Rca.Physical
@@ -10,6 +12,8 @@ namespace Rca.Physical
         public PhysicalUnits Unit { get; set; }
 
         public PhysicalDimensions Dimension => Unit.GetDimension();
+
+        public PhysicalUnits BaseUnit => Unit.GetDimension().GetBaseUnit();
 
 
         /// <summary>
@@ -28,6 +32,8 @@ namespace Rca.Physical
         }
 
 
+
+        //public double ValueAs()
 
         /// <summary>
         /// Get the plain base value in the SI base unit.
@@ -93,5 +99,27 @@ namespace Rca.Physical
 
             return Value == other.Value && Unit == other.Unit;
         }
+
+        #region Operator overloading
+        public static PhysicalValue operator +(PhysicalValue a) => a;
+        public static PhysicalValue operator -(PhysicalValue a) => new PhysicalValue(-a.Value, a.Unit);
+        public static PhysicalValue operator +(PhysicalValue a, PhysicalValue b)
+        {
+            if (a.Dimension != b.Dimension)
+                throw new InvalidDimensionException();
+
+            if (a.Unit == b.Unit)
+                return new PhysicalValue(a.Value + b.Value, a.Unit);
+            else
+            {
+                var baseResult = a.GetBaseValue() + b.GetBaseValue();
+                var converter = new Converter();
+
+                return converter.Convert(new PhysicalValue(baseResult, a.BaseUnit), a.Unit);
+            }
+        }
+
+
+        #endregion operator overloading
     }
 }
