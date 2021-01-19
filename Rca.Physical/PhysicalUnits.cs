@@ -15,7 +15,7 @@ namespace Rca.Physical
         [Symbol("Pa")]
         Pascal,
         [Dimension(PhysicalDimensions.Temperature)]
-        [Scaling(0, -273.15)]
+        [Scaling(1, 273.15)]
         [Symbol("°C")]
         Celsius,
         [Dimension(PhysicalDimensions.Temperature)]

@@ -14,7 +14,7 @@ namespace Rca.Physical
         Pressure,
         [BaseUnit(PhysicalUnits.Volt)]
         Voltage,
-        [BaseUnit(PhysicalUnits.Seconds)]
+        [BaseUnit(PhysicalUnits.Second)]
         Time
     }
 }
