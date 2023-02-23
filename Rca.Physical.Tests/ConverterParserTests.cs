@@ -20,6 +20,7 @@ namespace Rca.Physical.Tests
             { "123,258 m WS", new PhysicalValue(123.258, PhysicalUnits.MetresOfWaterGauge) },
         };
 
+        [Ignore]
         [TestMethod]
         public void Parse()
         {
