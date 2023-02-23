@@ -5,14 +5,14 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+  
   <ItemGroup>
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
-    <_Parameter1>Rca.Physical.Io</_Parameter1>
+      <_Parameter1>Rca.Physical.Io</_Parameter1>
     </AssemblyAttribute>
-  </ItemGroup>
-  <ItemGroup>
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
-    <_Parameter1>Rca.Physical.Tests</_Parameter1>
+      <_Parameter1>Rca.Physical.Tests</_Parameter1>
     </AssemblyAttribute>
   </ItemGroup>
+  
 </Project>
