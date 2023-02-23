@@ -135,7 +135,7 @@ namespace Rca.Physical
         /// </summary>
         [BaseUnit(PhysicalUnits.CubicMetrePerSecond)]
         [Symbol("Q")]
-        [ProductOf(Volume, Area)]
+        [ProductOf(Speed, Area)]
         VolumetricFlowRate,
 
         [BaseUnit(PhysicalUnits.JouleSecond)]
