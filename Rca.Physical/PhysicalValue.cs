@@ -19,7 +19,7 @@ namespace Rca.Physical
         private double m_Value = double.NaN;
         private PhysicalUnits m_Unit = PhysicalUnits.NotDefined;
         private ScaleOfMeasurements m_Scaling = ScaleOfMeasurements.NotDefined;
-        
+
         #endregion Members
 
         #region Fields
@@ -143,8 +143,10 @@ namespace Rca.Physical
             if (Dimension != targetUnit.GetDimension())
                 throw new ArithmeticException("Conversion not possible. Units must be represent the same physical dimension.");
 
+            var targetBaseFactor = targetUnit.GetBaseFactor();
+            var targetBaseOffset = targetUnit.GetBaseOffset();
 
-            return (GetBaseValue() - targetUnit.GetBaseOffset()) / targetUnit.GetBaseFactor();
+            return (GetBaseValue() - targetBaseOffset) / targetBaseFactor;
         }
 
         /// <summary>
@@ -159,7 +161,11 @@ namespace Rca.Physical
             if (baseUnit == Unit)
                 return Value;
             else if (Unit.IsDirectScalable())
-                return Unit.GetBaseFactor() * Value + Unit.GetBaseOffset();
+            {
+                var baseFactor = Unit.GetBaseFactor();
+                var baseOffset = Unit.GetBaseOffset();
+                return Value * baseFactor + baseOffset;
+            }
             else
                 throw new InvalidPhysicalUnitConvertionException(Unit, baseUnit, "The source unit is not direct scalable.");
         }

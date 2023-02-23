@@ -222,6 +222,11 @@ namespace Rca.Physical
             {
                 var value = double.NaN;
 
+#if DEBUG
+                var baseValue1 = argument1.GetBaseValue();
+                var baseValue2 = argument2.GetBaseValue();
+#endif
+
                 switch (operation)
                 {
                     case ArithmetricOperations.Addition:
