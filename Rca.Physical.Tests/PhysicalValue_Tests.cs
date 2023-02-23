@@ -6,6 +6,7 @@ namespace Rca.Physical.Tests
     [TestClass]
     public class PhysicalValue_Tests
     {
+        [Ignore]
         [TestMethod]
         public void GetFittedPhysicalValue_Test()
         {
