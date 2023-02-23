@@ -16,7 +16,7 @@ namespace Rca.Physical.Tests
 			new FunctionDescription(ArithmetricOperations.Multiplication, PhysicalDimensions.Length, PhysicalDimensions.Length, PhysicalDimensions.Area),
 			new FunctionDescription(ArithmetricOperations.Division, PhysicalDimensions.Volume, PhysicalDimensions.Length, PhysicalDimensions.Area),
 			new FunctionDescription(ArithmetricOperations.Division, PhysicalDimensions.Energy, PhysicalDimensions.HeatFluxDestiny, PhysicalDimensions.Area),
-			new FunctionDescription(ArithmetricOperations.Division, PhysicalDimensions.VolumetricFlowRate, PhysicalDimensions.Volume, PhysicalDimensions.Area),
+			new FunctionDescription(ArithmetricOperations.Division, PhysicalDimensions.VolumetricFlowRate, PhysicalDimensions.Speed, PhysicalDimensions.Area),
 			new FunctionDescription(ArithmetricOperations.Division, PhysicalDimensions.CostsPerTime, PhysicalDimensions.Time, PhysicalDimensions.Costs),
 			new FunctionDescription(ArithmetricOperations.Multiplication, PhysicalDimensions.Time, PhysicalDimensions.Costs, PhysicalDimensions.CostsPerTime),
 			new FunctionDescription(ArithmetricOperations.Multiplication, PhysicalDimensions.Costs, PhysicalDimensions.Time, PhysicalDimensions.CostsPerTime),
@@ -51,6 +51,7 @@ namespace Rca.Physical.Tests
 			new FunctionDescription(ArithmetricOperations.Multiplication, PhysicalDimensions.Voltage, PhysicalDimensions.ElectricCurrent, PhysicalDimensions.Power),
 			new FunctionDescription(ArithmetricOperations.Division, PhysicalDimensions.Energy, PhysicalDimensions.Time, PhysicalDimensions.Power),
 			new FunctionDescription(ArithmetricOperations.Division, PhysicalDimensions.Length, PhysicalDimensions.Time, PhysicalDimensions.Speed),
+			new FunctionDescription(ArithmetricOperations.Division, PhysicalDimensions.VolumetricFlowRate, PhysicalDimensions.Area, PhysicalDimensions.Speed),
 			new FunctionDescription(ArithmetricOperations.Division, PhysicalDimensions.Energy, PhysicalDimensions.Entropy, PhysicalDimensions.ThermodynamicTemperature),
 			new FunctionDescription(ArithmetricOperations.Division, PhysicalDimensions.Length, PhysicalDimensions.Speed, PhysicalDimensions.Time),
 			new FunctionDescription(ArithmetricOperations.Division, PhysicalDimensions.Energy, PhysicalDimensions.Power, PhysicalDimensions.Time),
@@ -61,9 +62,8 @@ namespace Rca.Physical.Tests
 			new FunctionDescription(ArithmetricOperations.Multiplication, PhysicalDimensions.Length, PhysicalDimensions.Area, PhysicalDimensions.Volume),
 			new FunctionDescription(ArithmetricOperations.Division, PhysicalDimensions.Mass, PhysicalDimensions.Destiny, PhysicalDimensions.Volume),
 			new FunctionDescription(ArithmetricOperations.Multiplication, PhysicalDimensions.Area, PhysicalDimensions.Length, PhysicalDimensions.Volume),
-			new FunctionDescription(ArithmetricOperations.Division, PhysicalDimensions.VolumetricFlowRate, PhysicalDimensions.Area, PhysicalDimensions.Volume),
-			new FunctionDescription(ArithmetricOperations.Multiplication, PhysicalDimensions.Area, PhysicalDimensions.Volume, PhysicalDimensions.VolumetricFlowRate),
-			new FunctionDescription(ArithmetricOperations.Multiplication, PhysicalDimensions.Volume, PhysicalDimensions.Area, PhysicalDimensions.VolumetricFlowRate),
+			new FunctionDescription(ArithmetricOperations.Multiplication, PhysicalDimensions.Area, PhysicalDimensions.Speed, PhysicalDimensions.VolumetricFlowRate),
+			new FunctionDescription(ArithmetricOperations.Multiplication, PhysicalDimensions.Speed, PhysicalDimensions.Area, PhysicalDimensions.VolumetricFlowRate),
 		};
 	}
 }
