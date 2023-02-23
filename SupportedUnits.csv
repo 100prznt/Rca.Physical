@@ -45,7 +45,7 @@
 "VolumetricFlowRate","CubicMetrePerSecond","m^3/s","","True","1","0"
 "VolumetricFlowRate","LitrePerSecond","l/s","","False","0,001","0"
 "VolumetricFlowRate","LitrePerMinute","l/min","","False","0,06","0"
-"VolumetricFlowRate","CubicMetrePerHour","m^3/h","","False","3600","0"
+"VolumetricFlowRate","CubicMetrePerHour","m^3/h","","False","0,000277777777778","0"
 "Costs","Euro","EUR","","False","1","0"
 "Costs","UnitedStatesDollar","USD","","False","1","0"
 "Costs","SwissFrancs","CHF","","False","1","0"
