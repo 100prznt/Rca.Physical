@@ -243,7 +243,23 @@ namespace Rca.Physical
         [Dimension(PhysicalDimensions.HeatFluxDestiny)]
         [AlternativeSymbolNotations("W/m²")]
         [Symbol("W/m^2")]
-        WattPerSquareMetre
+        WattPerSquareMetre,
+
+        [Dimension(PhysicalDimensions.KineticViscosity)]
+        [AlternativeSymbolNotations("m²/s")]
+        [Symbol("m^2/s")]
+        SquareMetrePerSecond,
+
+        [Dimension(PhysicalDimensions.DynamicViscosity)]
+        [AlternativeSymbolNotations("Pa⋅s")]
+        [Symbol("Pa s")]
+        PascalSecond,
+        [Dimension(PhysicalDimensions.DynamicViscosity)]
+        [Scaling(1)]
+        [AlternativeSymbolNotations("kg/m⋅s")]
+        [Symbol("kg/m s")]
+        [DisableAutoFit]
+        KilogramPerMeterSecond
 
 
         #region SI derived units with special names and symbols
