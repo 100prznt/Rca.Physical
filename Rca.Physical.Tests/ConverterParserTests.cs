@@ -9,7 +9,6 @@ namespace Rca.Physical.Tests
     {
         public Dictionary<string, PhysicalValue> TemperatureValues = new()
         {
-            { "13,258E-2 °C", new PhysicalValue(0.13258, PhysicalUnits.Celsius) },
             { "123,258 °C", new PhysicalValue(123.258, PhysicalUnits.Celsius) },
             { "123,258K", new PhysicalValue(123.258, PhysicalUnits.Kelvin) },
             { "-123,258 °C", new PhysicalValue(-123.258, PhysicalUnits.Celsius) },
@@ -18,6 +17,7 @@ namespace Rca.Physical.Tests
             { ",258E2K", new PhysicalValue(25.8, PhysicalUnits.Kelvin) },
             { "-258K", new PhysicalValue(-258, PhysicalUnits.Kelvin) },
             { "-258  K", new PhysicalValue(-258, PhysicalUnits.Kelvin) },
+            { "13,258E-2 °C", new PhysicalValue(0.13258, PhysicalUnits.Celsius) },
         };
 
         [TestMethod]
@@ -33,7 +33,6 @@ namespace Rca.Physical.Tests
 
         public Dictionary<string, PhysicalValue> PressureValues = new()
         {
-            { "123,258 m WS", new PhysicalValue(123.258, PhysicalUnits.MetresOfWaterGauge) },
             { "123,258 mWS", new PhysicalValue(123.258, PhysicalUnits.MetresOfWaterGauge) },
             { "123,258bar", new PhysicalValue(123.258, PhysicalUnits.Bar) },
             { "-123,258 mbar", new PhysicalValue(-123.258, PhysicalUnits.Millibar) },
@@ -46,6 +45,7 @@ namespace Rca.Physical.Tests
             { "13,258E2 bar", new PhysicalValue(1325.8, PhysicalUnits.Bar) },
             { "13,258E2 Pa", new PhysicalValue(1325.8, PhysicalUnits.Pascal) },
             { "13,258E2 psi", new PhysicalValue(1325.8, PhysicalUnits.Psi) },
+            { "123,258 m WS", new PhysicalValue(123.258, PhysicalUnits.MetresOfWaterGauge) },
         };
 
         [TestMethod]

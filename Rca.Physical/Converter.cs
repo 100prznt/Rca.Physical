@@ -80,7 +80,7 @@ namespace Rca.Physical
         /// </summary>
         /// <param name="valueString">A string containing a physical value to convert. A space between number and unit is not required.</param>
         /// <returns>Converted value</returns>
-        /// <exception cref="FormatException">The given string cannot be parsed as PhysicalValue.</exception>
+        /// <exception cref="FormatException">The given string cannot be converted to a PhysicalValue.</exception>
         public static PhysicalValue ParsePhysicalValue(string valueString) => ParsePhysicalValue(valueString, CultureInfo.CurrentCulture);
 
         /// <summary>
@@ -89,13 +89,13 @@ namespace Rca.Physical
         /// <param name="valueString">A string containing a physical value to convert. A space between number and unit is not required.</param>
         /// <param name="provider">An object that supplies culture-specific formatting information about <paramref name="valueString"/></param>
         /// <returns>Converted value</returns>
-        /// <exception cref="FormatException">The given string cannot be parsed as PhysicalValue.</exception>
+        /// <exception cref="FormatException">The given string cannot be converted to a PhysicalValue.</exception>
         public static PhysicalValue ParsePhysicalValue(string valueString, IFormatProvider provider)
         {
             if (TryParsePhysicalValue(valueString, provider, out var value))
                 return value;
             else
-                throw new FormatException($"The given string {valueString} cannot be parsed as PhysicalValue.");
+                throw new FormatException($"The given string {valueString} cannot be converted to a PhysicalValue.");
         }
         /// <summary>
         /// Converts the string representation of a physical value in a culture-specific format to its <see cref="PhysicalValue"/> equivalent. The numerical part must match the rules of the current culture. A return value indicates wehther the convertion succeded or failed.
@@ -173,11 +173,8 @@ namespace Rca.Physical
         /// Trigger the <seealso cref="PropertyChanged"/> event if clients are attached
         /// </summary>
         /// <param name="propertyName">Name of the property</param>
-        protected void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
+        protected void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        
         /// <summary>
         /// Applies the value to the corresponding member and triggers the <seealso cref="PropertyChanged"/> event if successful.
         /// </summary>
