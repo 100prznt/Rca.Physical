@@ -118,7 +118,6 @@ namespace Rca.Physical
                 InitializeBuffer();
 
             var regex = new Regex(@"^(?<value>[\+-]?[\d\.\,]+(?:[Ee][\+-]?\d+)?)\s*(?<unit>.[^\.\,]*)\s*$");
-            //var regex = new Regex(@"^(?<value>[\+-]?[\d\.\,]+(?:[Ee]\d+)?)\s*(?<unit>.[^\.\,]*)\s*$");
 
             var m = regex.Match(valueString);
 
@@ -152,7 +151,6 @@ namespace Rca.Physical
 
                 foreach (var unit in (PhysicalUnits[])Enum.GetValues(typeof(PhysicalUnits)))
                 {
-                    //UnitsSymbolBuffer.TryAdd(unit.GetSymbol().Replace(" ", ""), unit);
                     UnitsSymbolBuffer.TryAdd(unit.GetSymbol().Trim(), unit);
 
                     foreach (var notationString in unit.GetAlternativeSymbolNotations())
@@ -169,7 +167,7 @@ namespace Rca.Physical
         /// <summary>
         /// Notifies a change of a property of the instance
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         /// <summary>
         /// Trigger the <seealso cref="PropertyChanged"/> event if clients are attached
