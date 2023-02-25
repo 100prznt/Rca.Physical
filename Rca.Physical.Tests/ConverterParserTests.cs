@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Rca.Physical.Tests
@@ -25,7 +26,7 @@ namespace Rca.Physical.Tests
         {
             foreach (var testData in TemperatureValues)
             {
-                var result = Converter.ParsePhysicalValue(testData.Key);
+                var result = Converter.ParsePhysicalValue(testData.Key, CultureInfo.GetCultureInfo("de-DE"));
                 Assert.AreEqual(testData.Value.Value, result.Value, 1E-10);
                 Assert.AreEqual(testData.Value.Unit, result.Unit);
             }
@@ -53,7 +54,7 @@ namespace Rca.Physical.Tests
         {
             foreach (var testData in PressureValues)
             {
-                var result = Converter.ParsePhysicalValue(testData.Key);
+                var result = Converter.ParsePhysicalValue(testData.Key, CultureInfo.GetCultureInfo("de-DE"));
                 Assert.AreEqual(testData.Value.Value, result.Value, 1E-10);
                 Assert.AreEqual(testData.Value.Unit, result.Unit);
             }

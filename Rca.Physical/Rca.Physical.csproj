@@ -14,7 +14,7 @@
     <RepositoryUrl>https://github.com/100prznt/Rca.Physical</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>physics; units; physical</PackageTags>
-    <NeutralLanguage>en</NeutralLanguage>
+    <NeutralLanguage>en-US</NeutralLanguage>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
   
