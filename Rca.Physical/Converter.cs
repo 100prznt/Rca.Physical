@@ -4,6 +4,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -74,40 +75,64 @@ namespace Rca.Physical
                 throw new InvalidPhysicalUnitConvertionException(sourceValue.Unit, targetUnit, "The source unit is not direct scalable.");
         }
 
-        public static PhysicalValue ParsePhysicalValue(string valueString)
-        {
+        /// <summary>
+        /// Converts the string representation of a physical value in a culture-specific format to its <see cref="PhysicalValue"/> equivalent. The numerical part must match the rules of the current culture.
+        /// </summary>
+        /// <param name="valueString">A string containing a physical value to convert. A space between number and unit is not required.</param>
+        /// <returns>Converted value</returns>
+        /// <exception cref="FormatException">The given string cannot be parsed as PhysicalValue.</exception>
+        public static PhysicalValue ParsePhysicalValue(string valueString) => ParsePhysicalValue(valueString, CultureInfo.CurrentCulture);
 
-            if (TryParsePhysicalValue(valueString, out var value))
+        /// <summary>
+        /// Converts the string representation of a physical value in a culture-specific format to its <see cref="PhysicalValue"/> equivalent.
+        /// </summary>
+        /// <param name="valueString">A string containing a physical value to convert. A space between number and unit is not required.</param>
+        /// <param name="provider">An object that supplies culture-specific formatting information about <paramref name="valueString"/></param>
+        /// <returns>Converted value</returns>
+        /// <exception cref="FormatException">The given string cannot be parsed as PhysicalValue.</exception>
+        public static PhysicalValue ParsePhysicalValue(string valueString, IFormatProvider provider)
+        {
+            if (TryParsePhysicalValue(valueString, provider, out var value))
                 return value;
             else
-                throw new Exception(); //TODO: !!!!!!
+                throw new FormatException($"The given string {valueString} cannot be parsed as PhysicalValue.");
         }
+        /// <summary>
+        /// Converts the string representation of a physical value in a culture-specific format to its <see cref="PhysicalValue"/> equivalent. The numerical part must match the rules of the current culture. A return value indicates wehther the convertion succeded or failed.
+        /// </summary>
+        /// <param name="valueString">A string containing a physical value to convert. A space between number and unit is not required.</param>
+        /// <param name="value">Converted value</param>
+        /// <returns><see langword="true"/> if <paramref name="valueString"/> was converted successfully; otherwise, <see langword="false"/></returns>
+        public static bool TryParsePhysicalValue(string valueString, out PhysicalValue value) => TryParsePhysicalValue(valueString, CultureInfo.CurrentCulture, out value);
 
-        public static bool TryParsePhysicalValue(string valueString, out PhysicalValue value)
+        /// <summary>
+        /// Converts the string representation of a physical value in a culture-specific format to its <see cref="PhysicalValue"/> equivalent. A return value indicates wehther the convertion succeded or failed.
+        /// </summary>
+        /// <param name="valueString">A string containing a physical value to convert. A space between number and unit is not required.</param>
+        /// <param name="provider">An object that supplies culture-specific formatting information about <paramref name="valueString"/></param>
+        /// <param name="value">Converted value</param>
+        /// <returns><see langword="true"/> if <paramref name="valueString"/> was converted successfully; otherwise, <see langword="false"/></returns>
+        public static bool TryParsePhysicalValue(string valueString, IFormatProvider provider, out PhysicalValue value)
         {
             if (!BufferIsInitialized)
                 InitializeBuffer();
 
-            //Step 1 - Find and seperate value and unit
-            var regex = new Regex(@"^(?<value>[\+-]?[\d\.\,]+(?:[Ee]\d+)?)\s*(?<unit>.[^\.\,]*)\s*$", RegexOptions.Compiled);
+            var regex = new Regex(@"^(?<value>[\+-]?[\d\.\,]+(?:[Ee][\+-]?\d+)?)\s*(?<unit>.[^\.\,]*)\s*$");
+            //var regex = new Regex(@"^(?<value>[\+-]?[\d\.\,]+(?:[Ee]\d+)?)\s*(?<unit>.[^\.\,]*)\s*$");
 
             var m = regex.Match(valueString);
 
             if (m.Success)
-            {
-                //Step 2 - Parse value as double
-                if (!double.TryParse(m.Groups["value"].Value, out var valueDouble))
-                    throw new Exception(); //TODO: !!!!!!
-
-                var unitString = m.Groups["unit"].Value.Replace(" ", "");
-
-                //Step 3 - Find corresponding unit and return
-                if (UnitsSymbolBuffer.TryGetValue(unitString, out var unit))
+                if (double.TryParse(m.Groups["value"].Value, NumberStyles.Float, provider, out var valueDouble))
                 {
-                    value = new PhysicalValue(valueDouble, unit);
-                    return true;
+                    var unitString = m.Groups["unit"].Value.Trim();
+
+                    if (UnitsSymbolBuffer.TryGetValue(unitString, out var unit))
+                    {
+                        value = new PhysicalValue(valueDouble, unit);
+                        return true;
+                    }
                 }
-            }
 
             value = null;
             return false;
@@ -127,10 +152,11 @@ namespace Rca.Physical
 
                 foreach (var unit in (PhysicalUnits[])Enum.GetValues(typeof(PhysicalUnits)))
                 {
-                    UnitsSymbolBuffer.TryAdd(unit.GetSymbol().Replace(" ", ""), unit);
+                    //UnitsSymbolBuffer.TryAdd(unit.GetSymbol().Replace(" ", ""), unit);
+                    UnitsSymbolBuffer.TryAdd(unit.GetSymbol().Trim(), unit);
 
                     foreach (var notationString in unit.GetAlternativeSymbolNotations())
-                        UnitsSymbolBuffer.TryAdd(notationString.Replace(" ", ""), unit);
+                        UnitsSymbolBuffer.TryAdd(notationString.Trim(), unit);
                 }
                 BufferIsInitialized = true;
             }

@@ -8,6 +8,14 @@
     <Authors>rmmlr</Authors>
     <Description>Library to handle physical values, dimensions and units.</Description>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Copyright>Copyright © 2023 RC-Art Solutions (Ruemmler, Elias)</Copyright>
+    <PackageProjectUrl></PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/100prznt/Rca.Physical</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>physics; units; physical</PackageTags>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
   
   <ItemGroup>
@@ -17,6 +25,17 @@
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
       <_Parameter1>Rca.Physical.Tests</_Parameter1>
     </AssemblyAttribute>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
   
 </Project>

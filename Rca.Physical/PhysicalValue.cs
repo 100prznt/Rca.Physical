@@ -27,6 +27,12 @@ namespace Rca.Physical
 
         #endregion Fields
 
+        #region Static
+
+        public static PhysicalValue NaN => new();
+
+        #endregion Static
+
         #region Properties
         /// <summary>
         /// Numeric value
@@ -86,13 +92,22 @@ namespace Rca.Physical
         {
             Value = value;
             Unit = unit;
-
             Scaling = scaling;
         }
 
         #endregion Constructors
 
         #region Services
+        /// <summary>
+        /// Returns a value that indicates wehther the specified value is not a number.
+        /// </summary>
+        /// <param name="physicalValue"></param>
+        /// <returns><see langword="true"/> if <paramref name="physicalValue"/> contain an Value that evaluates to <see cref="double.NaN"/>; otherwise <see langword="false"/></returns>
+        public static bool IsNaN(PhysicalValue physicalValue)
+        {
+            return double.IsNaN(physicalValue.Value);
+        }
+
         /// <summary>
         /// Finds the best fitting unit for the current value.
         /// </summary>
@@ -331,16 +346,35 @@ namespace Rca.Physical
         /// </summary>
         /// <param name="other"></param>
         /// <returns><see langword="true"/> if <paramref name="obj"/> is an instance of <seealso cref="PhysicalValue"/> and equals the value, unit and scaling of this instance; otherwise, <see langword="false"/></returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj is null)
                 return false;
+
+            if (!double.IsFinite(this.Value))
+                return false;
+
             if (ReferenceEquals(this, obj))
                 return true;
+
             if (obj.GetType() != this.GetType())
                 return false;
 
             return Equals((PhysicalValue)obj);
+        }
+
+        /// <summary>
+        /// Determines whethere the specified <seealso cref="PhysicalValue"/> instances are considered equal.
+        /// </summary>
+        /// <param name="valueA">The first <seealso cref="PhysicalValue"/> to compare.</param>
+        /// <param name="valueB">The second <seealso cref="PhysicalValue"/> to compare.</param>
+        /// <returns><see langword="true"/> if the <seealso cref="PhysicalValue"/> are considered equal; otherwise, <see langword="false"/></returns>
+        public static bool Equals(PhysicalValue valueA, PhysicalValue valueB)
+        {
+            if (valueA == null || valueB == null)
+                return false;
+            else
+                return valueA.Equals(valueB);
         }
 
         /// <summary>
@@ -349,10 +383,7 @@ namespace Rca.Physical
         /// <returns>A 32-bit signed integer hash code.</returns>
         public override int GetHashCode()
         {
-            unchecked //allow int overflow
-            {
-                return (Value.GetHashCode() * 397) ^ Unit.GetHashCode();
-            }
+            return HashCode.Combine(Value, Unit, Scaling);
         }
 
         /// <summary>
@@ -360,9 +391,12 @@ namespace Rca.Physical
         /// </summary>
         /// <param name="other"></param>
         /// <returns><see langword="true"/> if <paramref name="other"/> is equal to this instance; otherwise, <see langword="false"/></returns>
-        public bool Equals(PhysicalValue other)
+        public bool Equals(PhysicalValue? other)
         {
             if (other is null)
+                return false;
+
+            if (!double.IsFinite(this.Value) || !double.IsFinite(other.Value))
                 return false;
 
             if (ReferenceEquals(this, other))
@@ -481,7 +515,7 @@ namespace Rca.Physical
         /// <summary>
         /// Notifies a change of a property of the instance
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         /// <summary>
         /// Trigger the <seealso cref="PropertyChanged"/> event if clients are attached
