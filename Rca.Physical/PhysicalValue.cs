@@ -198,6 +198,52 @@ namespace Rca.Physical
         }
 
         /// <summary>
+        /// Converts the string representation of a physical value in a culture-specific format to its <see cref="PhysicalValue"/> equivalent. The numerical part must match the rules of the current culture.
+        /// </summary>
+        /// <param name="valueString">A string containing a physical value to convert. A space between number and unit is not required.</param>
+        /// <returns>Converted value</returns>
+        /// <exception cref="FormatException">The given string cannot be converted to a PhysicalValue.</exception>
+        public static PhysicalValue Parse(string valueString)
+        {
+            return Converter.ParsePhysicalValue(valueString);
+        }
+
+        /// <summary>
+        /// Converts the string representation of a physical value in a culture-specific format to its <see cref="PhysicalValue"/> equivalent.
+        /// </summary>
+        /// <param name="valueString">A string containing a physical value to convert. A space between number and unit is not required.</param>
+        /// <param name="provider">An object that supplies culture-specific formatting information about <paramref name="valueString"/></param>
+        /// <returns>Converted value</returns>
+        /// <exception cref="FormatException">The given string cannot be converted to a PhysicalValue.</exception>
+        public static PhysicalValue Parse(string valueString, IFormatProvider provider)
+        {
+            return Converter.ParsePhysicalValue(valueString, provider);
+        }
+
+        /// <summary>
+        /// Converts the string representation of a physical value in a culture-specific format to its <see cref="PhysicalValue"/> equivalent. The numerical part must match the rules of the current culture. A return value indicates wehther the convertion succeded or failed.
+        /// </summary>
+        /// <param name="valueString">A string containing a physical value to convert. A space between number and unit is not required.</param>
+        /// <param name="value">Converted value</param>
+        /// <returns><see langword="true"/> if <paramref name="valueString"/> was converted successfully; otherwise, <see langword="false"/></returns>
+        public static bool TryParse(string valueString, out PhysicalValue value)
+        {
+            return Converter.TryParsePhysicalValue(valueString, out value);
+        }
+
+        /// <summary>
+        /// Converts the string representation of a physical value in a culture-specific format to its <see cref="PhysicalValue"/> equivalent. A return value indicates wehther the convertion succeded or failed.
+        /// </summary>
+        /// <param name="valueString">A string containing a physical value to convert. A space between number and unit is not required.</param>
+        /// <param name="provider">An object that supplies culture-specific formatting information about <paramref name="valueString"/></param>
+        /// <param name="value">Converted value</param>
+        /// <returns><see langword="true"/> if <paramref name="valueString"/> was converted successfully; otherwise, <see langword="false"/></returns>
+        public static bool TryParse(string valueString, IFormatProvider provider, out PhysicalValue value)
+        {
+            return Converter.TryParsePhysicalValue(valueString, provider, out value);
+        }
+
+        /// <summary>
         /// Returns the value with unit, formatted as string using the specified <see cref="PhysicalUnits"/>
         /// </summary>
         /// <param name="targetUnit"></param>

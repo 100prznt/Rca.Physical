@@ -97,6 +97,7 @@ namespace Rca.Physical
             else
                 throw new FormatException($"The given string {valueString} cannot be converted to a PhysicalValue.");
         }
+
         /// <summary>
         /// Converts the string representation of a physical value in a culture-specific format to its <see cref="PhysicalValue"/> equivalent. The numerical part must match the rules of the current culture. A return value indicates wehther the convertion succeded or failed.
         /// </summary>
