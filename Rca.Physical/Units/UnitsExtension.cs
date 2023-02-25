@@ -61,7 +61,7 @@ namespace Rca.Physical.Units
 
             var attr = GetAttribute<DisableAutoFitAttribute>(unit);
             var disableAutoFit = attr != null && attr.AutoFitIsDisabled;
-            UnitsDisableAutoFitBuffer.AddOrUpdate(unit, disableAutoFit, (k, old) => disableAutoFit);
+            UnitsDisableAutoFitBuffer.AddOrUpdate(unit, !disableAutoFit, (k, old) => disableAutoFit);
 
             return !disableAutoFit;
         }
