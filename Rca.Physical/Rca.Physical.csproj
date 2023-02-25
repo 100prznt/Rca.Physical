@@ -16,6 +16,7 @@
     <PackageTags>physics; units; physical</PackageTags>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
   </PropertyGroup>
   
   <ItemGroup>
