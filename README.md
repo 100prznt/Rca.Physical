@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/pr75d5euqv1ux390?svg=true)](https://ci.appveyor.com/project/100prznt/rca-physical)
+[![Bulid](https://img.shields.io/appveyor/ci/100prznt/rca-physical.svg?logo=appveyor&style=popout-square)](https://ci.appveyor.com/project/100prznt/rca-physical)   [![Current version](https://img.shields.io/nuget/v/Rca.Physical.svg?logo=nuget&logoColor=%23ef8b00&style=popout-square)](https://www.nuget.org/packages/Rca.Physical/)   [![Code size](https://img.shields.io/github/languages/code-size/100prznt/Rca.Physical.svg?logo=github&style=popout-square)](#) 
 
 # Rca.Physical
 
