@@ -555,6 +555,46 @@ namespace Rca.Physical
             return Calculator.Divide(dividend, divisor);
         }
 
+        public static bool operator <(PhysicalValue a, PhysicalValue b)
+        {
+            if (a.Dimension != b.Dimension)
+                throw new ArithmeticException("Subtraction not possible. Minuent and subtrahend must represent the same physical dimension.");
+
+            //TODO: Scaling beachten
+
+            return a.GetBaseValue() < b.GetBaseValue();
+        }
+
+        public static bool operator >(PhysicalValue a, PhysicalValue b)
+        {
+            if (a.Dimension != b.Dimension)
+                throw new ArithmeticException("Subtraction not possible. Minuent and subtrahend must represent the same physical dimension.");
+
+            //TODO: Scaling beachten
+
+            return a.GetBaseValue() < b.GetBaseValue();
+        }
+
+        public static bool operator ==(PhysicalValue a, PhysicalValue b)
+        {
+            if (a.Dimension != b.Dimension)
+                throw new ArithmeticException("Subtraction not possible. Minuent and subtrahend must represent the same physical dimension.");
+
+            //TODO: Scaling beachten
+
+            return a.GetBaseValue() == b.GetBaseValue();
+        }
+
+        public static bool operator !=(PhysicalValue a, PhysicalValue b)
+        {
+            if (a.Dimension != b.Dimension)
+                throw new ArithmeticException("Subtraction not possible. Minuent and subtrahend must represent the same physical dimension.");
+
+            //TODO: Scaling beachten
+
+            return a.GetBaseValue() != b.GetBaseValue();
+        }
+
         #endregion Operator overloading
 
         #region InotifyPropertyChanged
