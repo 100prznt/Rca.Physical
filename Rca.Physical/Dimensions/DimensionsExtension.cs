@@ -1,4 +1,5 @@
 ﻿using Rca.Physical.Dimensions.Arithmetric;
+using Rca.Physical.Units;
 using System;
 using System.Collections;
 using System.Collections.Concurrent;
@@ -12,6 +13,7 @@ namespace Rca.Physical.Dimensions
     public static class DimensionsExtension
     {
         private static ConcurrentDictionary<PhysicalDimensions, PhysicalUnits> DimensionsBaseUnitBuffer = new ConcurrentDictionary<PhysicalDimensions, PhysicalUnits>();
+        private static ConcurrentDictionary<PhysicalDimensions, PhysicalUnits[]> DimensionsUnitsBuffer = new ConcurrentDictionary<PhysicalDimensions, PhysicalUnits[]>();
         private static ConcurrentDictionary<PhysicalDimensions, string[]> DimensionsSymbolsBuffer = new ConcurrentDictionary<PhysicalDimensions, string[]>();
         private static ConcurrentDictionary<PhysicalDimensions, FunctionDescription[]> DimensionsDerivationFunctionsBuffer = new ConcurrentDictionary<PhysicalDimensions, FunctionDescription[]>();
 
@@ -33,6 +35,23 @@ namespace Rca.Physical.Dimensions
             DimensionsBaseUnitBuffer.AddOrUpdate(dimension, baseUnit, (k, old) => baseUnit);
 
             return baseUnit;
+        }
+
+        /// <summary>
+        /// Returns all units representing this dimension.
+        /// </summary>
+        /// <returns>Units</returns>
+        public static PhysicalUnits[] GetUnits(this PhysicalDimensions dimension)
+        {
+            if (DimensionsUnitsBuffer.ContainsKey(dimension))
+                return DimensionsUnitsBuffer[dimension];
+
+            var all = (PhysicalUnits[])Enum.GetValues(typeof(PhysicalUnits));
+
+            var units = all.Where(u => u.GetDimension() == dimension);
+            DimensionsUnitsBuffer.AddOrUpdate(dimension, units.ToArray(), (k, old) => units.ToArray());
+
+            return units.ToArray();
         }
 
         /// <summary>
