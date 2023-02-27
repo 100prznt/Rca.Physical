@@ -259,7 +259,7 @@ namespace Rca.Physical
         [AlternativeSymbolNotations("kg/m⋅s")]
         [Symbol("kg/m s")]
         [DisableAutoFit]
-        KilogramPerMeterSecond
+        KilogramPerMetreSecond
 
 
         #region SI derived units with special names and symbols
