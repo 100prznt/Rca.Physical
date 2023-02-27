@@ -12,7 +12,7 @@ using System.Runtime.CompilerServices;
 namespace Rca.Physical
 {
     [DebuggerDisplay("{DefaultFormattedValue, nq}")]
-    public class PhysicalValue : IEquatable<PhysicalValue>, INotifyPropertyChanged
+    public class PhysicalValue : IEquatable<PhysicalValue>, IComparable, INotifyPropertyChanged
     {
         #region Members
 
@@ -455,6 +455,30 @@ namespace Rca.Physical
         }
 
         #endregion IEquatable
+
+        #region IComparable
+        /// <summary>
+        /// Compares this instance to a specific <seealso cref="PhysicalValue"/> and returns an integer tha indicates whether the value of this instance is less then, equal to or greater than the value of the specified <seealso cref="PhysicalValue"/>.
+        /// </summary>
+        /// <param name="obj">A <seealso cref="PhysicalValue"/> to compare</param>
+        /// <returns>A signed number indicating the relative values of this instance and <paramref name="obj"/></returns>
+        /// <exception cref="ArgumentException"><paramref name="obj"/> is not a PhysicalValue</exception>
+        public int CompareTo(object? obj)
+        {
+            if (obj is null)
+                return 1;
+
+            if (obj is PhysicalValue other)
+            {
+                CheckForSameDimension(this, other);
+                CheckForSameScaling(this, other);
+                return this.GetBaseValue().CompareTo(other.GetBaseValue());
+            }
+            else
+                throw new ArgumentException("Object is not a PhysicalValue");
+        }
+
+        #endregion IComparable
 
         #endregion Services
 
