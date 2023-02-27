@@ -7,7 +7,7 @@ Library to handle physical values, dimensions and units.
 
 ## Core Features
 
-* Basic calculation with phsyical values 
+* Basic calculation with physical values 
 
 
 ## Usage
