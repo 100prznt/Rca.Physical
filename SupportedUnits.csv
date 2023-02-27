@@ -61,5 +61,5 @@
 "HeatFluxDestiny","WattPerSquareMetre","W/m^2","","True","1","0"
 "KineticViscosity","SquareMetrePerSecond","m^2/s","","True","1","0"
 "DynamicViscosity","PascalSecond","Pa s","","True","1","0"
-"DynamicViscosity","KilogramPerMeterSecond","kg/m s","","False","1","0"
+"DynamicViscosity","KilogramPerMetreSecond","kg/m s","","False","1","0"
 "NotDefined","NotDefined","NotDefined","","True","1","0"
