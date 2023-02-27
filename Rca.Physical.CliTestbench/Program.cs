@@ -5,9 +5,9 @@ using System.Runtime.CompilerServices;
 
 Console.WriteLine("Rca.Physical.CliTestbench");
 
-//InitPysicalValue
+
 //Use the helper classes, are provided for each physical dimension.
-var myVoltageValue = Voltage.FromMillivolt(7410);
+PhysicalValue myVoltageValue = Voltage.FromMillivolt(7410);
 //Use the PhysicalValue constructor and select the unit from the common Units-Enum
 PhysicalValue myCurrentValue = new(0.147, PhysicalUnits.Ampere);
 

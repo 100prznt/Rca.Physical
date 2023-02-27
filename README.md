@@ -14,7 +14,7 @@ Library to handle physical values, dimensions and units.
 
 ```csharp
 //Use the helper classes, are provided for each physical dimension.
-var myVoltageValue = Voltage.FromMillivolt(7410);
+PhysicalValue myVoltageValue = Voltage.FromMillivolt(7410);
 
 //Use the PhysicalValue constructor and select the unit from the common Units-Enum
 PhysicalValue myCurrentValue = new(0.147, PhysicalUnits.Ampere);
