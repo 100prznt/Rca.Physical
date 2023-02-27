@@ -417,7 +417,7 @@ namespace Rca.Physical
         /// <returns><see langword="true"/> if the <seealso cref="PhysicalValue"/> are considered equal; otherwise, <see langword="false"/></returns>
         public static bool Equals(PhysicalValue valueA, PhysicalValue valueB)
         {
-            if (valueA == null || valueB == null)
+            if (valueA is null || valueB is null)
                 return false;
             else
                 return valueA.Equals(valueB);
@@ -463,7 +463,30 @@ namespace Rca.Physical
         {
             return string.IsNullOrWhiteSpace(Unit.GetSymbol()) ? "" : " " + Unit.GetSymbol();
         }
-        
+
+        private static bool CheckForNotNull(PhysicalValue a, PhysicalValue b)
+        {
+            if (a is null || b is null)
+                throw new NullReferenceException("Operation not possible. One of the given PhysicalValues is null.");
+            else
+                return true;
+        }
+
+        private static bool CheckForSameDimension(PhysicalValue a, PhysicalValue b)
+        {
+            if (a.Dimension != b.Dimension)
+                throw new ArithmeticException("Operation not possible. The given PhysicalValues must represent the same physical dimension.");
+            else
+                return true;
+        }
+
+        private static bool CheckForSameScaling(PhysicalValue a, PhysicalValue b)
+        {
+            if (a.Scaling != b.Scaling)
+                throw new ArithmeticException("Operation not possible. The given PhysicalValues must represent the same scaling.");
+            else
+                return true;
+        }
         #endregion Internal services
 
         #region Operator overloading
@@ -557,8 +580,9 @@ namespace Rca.Physical
 
         public static bool operator <(PhysicalValue a, PhysicalValue b)
         {
-            if (a.Dimension != b.Dimension)
-                throw new ArithmeticException("Subtraction not possible. Minuent and subtrahend must represent the same physical dimension.");
+            CheckForNotNull(a, b);
+            CheckForSameDimension(a, b);
+            CheckForSameScaling(a, b);
 
             //TODO: Scaling beachten
 
@@ -567,8 +591,9 @@ namespace Rca.Physical
 
         public static bool operator >(PhysicalValue a, PhysicalValue b)
         {
-            if (a.Dimension != b.Dimension)
-                throw new ArithmeticException("Subtraction not possible. Minuent and subtrahend must represent the same physical dimension.");
+            CheckForNotNull(a, b);
+            CheckForSameDimension(a, b);
+            CheckForSameScaling(a, b);
 
             //TODO: Scaling beachten
 
@@ -577,18 +602,26 @@ namespace Rca.Physical
 
         public static bool operator ==(PhysicalValue a, PhysicalValue b)
         {
-            if (a.Dimension != b.Dimension)
-                throw new ArithmeticException("Subtraction not possible. Minuent and subtrahend must represent the same physical dimension.");
+            if (a is null || (object)b != null)
+                return false;
+            if ((object)a != null || b is null)
+                return false;
+            else if (a is null && b is null)
+                return true;
+
+            CheckForSameDimension(a, b);
+            CheckForSameScaling(a, b);
 
             //TODO: Scaling beachten
 
             return a.GetBaseValue() == b.GetBaseValue();
+            
         }
 
         public static bool operator !=(PhysicalValue a, PhysicalValue b)
         {
-            if (a.Dimension != b.Dimension)
-                throw new ArithmeticException("Subtraction not possible. Minuent and subtrahend must represent the same physical dimension.");
+            CheckForSameDimension(a, b);
+            CheckForSameScaling(a, b);
 
             //TODO: Scaling beachten
 
