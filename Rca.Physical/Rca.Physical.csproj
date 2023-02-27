@@ -41,4 +41,10 @@
     </None>
   </ItemGroup>
   
+  <ItemGroup>
+    <None Update="Dependencies\SEUIF97\x64\libseuif97.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  
 </Project>

@@ -1,10 +1,9 @@
-﻿using Rca.Physical.Units;
+﻿using Rca.Physical.Helpers;
+using Rca.Physical.Units;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Rca.Physical.Dimensions.Arithmetric
 {
@@ -83,6 +82,25 @@ namespace Rca.Physical.Dimensions.Arithmetric
                 return operationEqual && DimensionResult == other.DimensionResult;
         }
 
+        /// <summary>
+        /// Returns a value indicating whether this instance is equal to a specific object.
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns><see langword="true"/> if <paramref name="obj"/> is an instance of <seealso cref="FunctionDescription"/> and equals the value, unit and scaling of this instance; otherwise, <see langword="false"/></returns>
+        public override bool Equals(object? obj)
+        {
+            return obj is FunctionDescription description && Equals(description);
+        }
+
+        /// <summary>
+        /// Returns the Hashcode for that instance.
+        /// </summary>
+        /// <returns>A 32-bit signed integer hash code.</returns>
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Operation, DimensionArgument1, DimensionArgument2, DimensionResult);
+        }
+
         private string GetOperationSymbol()
         {
             var fi = typeof(ArithmetricOperations).GetField(Operation.ToString());
@@ -95,14 +113,12 @@ namespace Rca.Physical.Dimensions.Arithmetric
         }
 
 #if DEBUG
-
         public string ToCSharp()
         {
             //var dummy = new FunctionDescription(ArithmetricOperations.Exponentiation, PhysicalDimensions.Costs, PhysicalDimensions.Costs, PhysicalDimensions.Costs);
 
             return $"new FunctionDescription(ArithmetricOperations.{Operation}, PhysicalDimensions.{DimensionArgument1}, PhysicalDimensions.{DimensionArgument2}, PhysicalDimensions.{DimensionResult})";
         }
-
 #endif
     }
 }

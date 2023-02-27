@@ -498,7 +498,11 @@ namespace Rca.Physical
 
         private static bool CheckForSameDimension(PhysicalValue a, PhysicalValue b)
         {
-            if (a.Dimension != b.Dimension)
+            //TODO: Passt das hier so?
+            //if (a is null || b is null)
+            //    return false;
+
+           if (a.Dimension != b.Dimension)
                 throw new ArithmeticException("Operation not possible. The given PhysicalValues must represent the same physical dimension.");
             else
                 return true;
@@ -506,6 +510,10 @@ namespace Rca.Physical
 
         private static bool CheckForSameScaling(PhysicalValue a, PhysicalValue b)
         {
+            //TODO: Passt das hier so?
+            //if (a is null || b is null)
+            //    return false;
+
             if (a.Scaling != b.Scaling)
                 throw new ArithmeticException("Operation not possible. The given PhysicalValues must represent the same scaling.");
             else

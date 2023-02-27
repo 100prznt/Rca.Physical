@@ -133,6 +133,16 @@ namespace Rca.Physical
         [AlternativeSymbolNotations("m²")]
         [Symbol("m^2")]
         SquareMetre,
+        [Dimension(PhysicalDimensions.Area)]
+        [Scaling(0.0001)]
+        [AlternativeSymbolNotations("cm²")]
+        [Symbol("cm^2")]
+        SquareCentimetre,
+        [Dimension(PhysicalDimensions.Area)]
+        [Scaling(0.000001)]
+        [AlternativeSymbolNotations("mm²")]
+        [Symbol("mm^2")]
+        SquareMillimetre,
         [Dimension(PhysicalDimensions.Volume)]
         [Symbol("m^3")]
         [AlternativeSymbolNotations("cbm", "m³")]

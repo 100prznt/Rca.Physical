@@ -94,7 +94,6 @@ namespace Rca.Physical.Io
         }
 
 #if DEBUG
-
         public void ExportDerivativeFunctionArray(string path)
         {
             if (Directory.Exists(path[..path.LastIndexOf('\\')]))
@@ -119,7 +118,6 @@ namespace Rca.Physical.Io
                 sw.WriteLine("}");
             }
         }
-
 #endif
     }
 }
