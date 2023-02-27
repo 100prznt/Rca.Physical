@@ -6,7 +6,7 @@ namespace Rca.Physical.Helpers
 	/// <summary>
 	/// Helper to generate <seealso cref="PhysicalValue"/> from numeric values of associated units.
 	/// </summary>
-	public abstract class LuminousIntensity
+	public abstract partial class LuminousIntensity
 	{
 		/// <summary>
 		/// Returns a <seealso cref="PhysicalValue"/> that represents a LuminousIntensity of speciefied Candelas.

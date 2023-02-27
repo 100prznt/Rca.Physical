@@ -6,7 +6,7 @@ namespace Rca.Physical.Helpers
 	/// <summary>
 	/// Helper to generate <seealso cref="PhysicalValue"/> from numeric values of associated units.
 	/// </summary>
-	public abstract class ElectricCharge
+	public abstract partial class ElectricCharge
 	{
 		/// <summary>
 		/// Returns a <seealso cref="PhysicalValue"/> that represents a ElectricCharge of speciefied Coulombs.

@@ -6,7 +6,7 @@ namespace Rca.Physical.Helpers
 	/// <summary>
 	/// Helper to generate <seealso cref="PhysicalValue"/> from numeric values of associated units.
 	/// </summary>
-	public abstract class CostsPerTime
+	public abstract partial class CostsPerTime
 	{
 	}
 }

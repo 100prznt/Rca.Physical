@@ -6,7 +6,7 @@ namespace Rca.Physical.Helpers
 	/// <summary>
 	/// Helper to generate <seealso cref="PhysicalValue"/> from numeric values of associated units.
 	/// </summary>
-	public abstract class Area
+	public abstract partial class Area
 	{
 		/// <summary>
 		/// Returns a <seealso cref="PhysicalValue"/> that represents a Area of speciefied SquareMetres.

@@ -6,7 +6,7 @@ namespace Rca.Physical.Helpers
 	/// <summary>
 	/// Helper to generate <seealso cref="PhysicalValue"/> from numeric values of associated units.
 	/// </summary>
-	public abstract class ElectricCurrent
+	public abstract partial class ElectricCurrent
 	{
 		/// <summary>
 		/// Returns a <seealso cref="PhysicalValue"/> that represents a ElectricCurrent of speciefied Amperes.

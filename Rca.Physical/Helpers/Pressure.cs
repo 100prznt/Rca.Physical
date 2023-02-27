@@ -6,7 +6,7 @@ namespace Rca.Physical.Helpers
 	/// <summary>
 	/// Helper to generate <seealso cref="PhysicalValue"/> from numeric values of associated units.
 	/// </summary>
-	public abstract class Pressure
+	public abstract partial class Pressure
 	{
 		/// <summary>
 		/// Returns a <seealso cref="PhysicalValue"/> that represents a Pressure of speciefied Bars.

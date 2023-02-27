@@ -6,7 +6,7 @@ namespace Rca.Physical.Helpers
 	/// <summary>
 	/// Helper to generate <seealso cref="PhysicalValue"/> from numeric values of associated units.
 	/// </summary>
-	public abstract class Volume
+	public abstract partial class Volume
 	{
 		/// <summary>
 		/// Returns a <seealso cref="PhysicalValue"/> that represents a Volume of speciefied CubicMetres.

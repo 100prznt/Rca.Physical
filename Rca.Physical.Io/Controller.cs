@@ -62,6 +62,9 @@ namespace Rca.Physical.Io
             {
                 foreach (var dim in Dimensions)
                 {
+                    if (dim == PhysicalDimensions.None || dim == PhysicalDimensions.NotDefined)
+                        continue;
+                    
                     using var sw = new StreamWriter($"{directory}\\{dim}.cs");
                     sw.WriteLine("// THIS FILE IS AUTO GENERATED!");
                     sw.WriteLine("// ALL CHANGES ARE OVERWRITTEN BY EXECUTION OF THE Rca.Physics.Io PROJECT");
@@ -71,7 +74,7 @@ namespace Rca.Physical.Io
                     sw.WriteLine("\t/// <summary>");
                     sw.WriteLine("\t/// Helper to generate <seealso cref=\"PhysicalValue\"/> from numeric values of associated units.");
                     sw.WriteLine("\t/// </summary>");
-                    sw.WriteLine($"\tpublic abstract class {dim}");
+                    sw.WriteLine($"\tpublic abstract partial class {dim}");
                     sw.WriteLine("\t{");
                     foreach (var unit in dim.GetUnits())
                     {

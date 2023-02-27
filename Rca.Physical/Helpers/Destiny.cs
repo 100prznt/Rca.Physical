@@ -6,7 +6,7 @@ namespace Rca.Physical.Helpers
 	/// <summary>
 	/// Helper to generate <seealso cref="PhysicalValue"/> from numeric values of associated units.
 	/// </summary>
-	public abstract class Destiny
+	public abstract partial class Destiny
 	{
 		/// <summary>
 		/// Returns a <seealso cref="PhysicalValue"/> that represents a Destiny of speciefied KilogramPerCubicMetres.

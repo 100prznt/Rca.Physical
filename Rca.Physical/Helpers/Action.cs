@@ -6,7 +6,7 @@ namespace Rca.Physical.Helpers
 	/// <summary>
 	/// Helper to generate <seealso cref="PhysicalValue"/> from numeric values of associated units.
 	/// </summary>
-	public abstract class Action
+	public abstract partial class Action
 	{
 		/// <summary>
 		/// Returns a <seealso cref="PhysicalValue"/> that represents a Action of speciefied JouleSeconds.
