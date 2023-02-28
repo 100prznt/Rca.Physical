@@ -157,7 +157,7 @@ namespace Rca.Physical
         [AlternativeSymbolNotations("[rho]")]
         [Symbol("D")]
         [QuotientOf(Mass, Volume)]
-        Destiny,
+        Density,
         [BaseUnit(PhysicalUnits.WattPerSquareMetre)]
         [Symbol("q")]
         [QuotientOf(Energy, Area)]
@@ -165,12 +165,12 @@ namespace Rca.Physical
 
         [BaseUnit(PhysicalUnits.PascalSecond)]
         [Symbol("[eta]")]
-        [ProductOf(KineticViscosity, Destiny)]
+        [ProductOf(KineticViscosity, Density)]
         DynamicViscosity,
 
         [BaseUnit(PhysicalUnits.SquareMetrePerSecond)]
         [Symbol("[ny]")]
-        [QuotientOf(DynamicViscosity, Destiny)]
+        [QuotientOf(DynamicViscosity, Density)]
         KineticViscosity,
 
         #endregion

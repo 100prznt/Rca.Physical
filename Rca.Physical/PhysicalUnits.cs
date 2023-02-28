@@ -246,7 +246,7 @@ namespace Rca.Physical
         [Dimension(PhysicalDimensions.ElectricCharge)]
         [Symbol("C")]
         Coulomb,
-        [Dimension(PhysicalDimensions.Destiny)]
+        [Dimension(PhysicalDimensions.Density)]
         [AlternativeSymbolNotations("kg/m³")]
         [Symbol("kg/m^3")]
         KilogramPerCubicMetre,
