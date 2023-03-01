@@ -41,6 +41,3 @@ Rca.Physical is licensed under [MIT](http://www.opensource.org/licenses/mit-lice
 
 ## Contributions
 Contributions are welcome. Fork this repository and send a pull request if you have something useful to add.
-
-
-[![Bulid](https://img.shields.io/appveyor/ci/100prznt/rca-physical.svg?logo=appveyor&style=popout-square)](https://ci.appveyor.com/project/100prznt/rca-physical)
