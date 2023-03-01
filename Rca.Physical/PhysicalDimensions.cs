@@ -174,7 +174,7 @@ namespace Rca.Physical
         KineticViscosity,
 
 
-        [BaseUnit(PhysicalUnits.CubicmetrePerKilogram)]
+        [BaseUnit(PhysicalUnits.CubicMetrePerKilogram)]
         [Symbol("[nu]")]
         [QuotientOf(Volume, Mass)]
         SpecificVolume,
