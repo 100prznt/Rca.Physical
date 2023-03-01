@@ -31,3 +31,16 @@ Console.WriteLine(myCurrentValue.GetFittedPhysicalValue());
 //  7410 mV
 //  147 mA
 ```
+
+## Credits
+This library is made possible by contributions from:
+* [Elias Rümmler](http://www.100prznt.de) ([@rmmlr](https://github.com/rmmlr)) - core contributor
+
+## License
+Rca.Physical is licensed under [MIT](http://www.opensource.org/licenses/mit-license.php "Read more about the MIT license form"). Refer to [LICENSE](https://github.com/100prznt/Rca.Physical/blob/master/LICENSE) for more information.
+
+## Contributions
+Contributions are welcome. Fork this repository and send a pull request if you have something useful to add.
+
+
+[![Bulid](https://img.shields.io/appveyor/ci/100prznt/rca-physical.svg?logo=appveyor&style=popout-square)](https://ci.appveyor.com/project/100prznt/rca-physical)
