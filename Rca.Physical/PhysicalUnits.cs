@@ -274,7 +274,7 @@ namespace Rca.Physical
         [Dimension(PhysicalDimensions.SpecificVolume)]
         [AlternativeSymbolNotations("m³/kg")]
         [Symbol("m^3/kg")]
-        CubicmetrePerKilogram,
+        CubicMetrePerKilogram,
 
 
         #region SI derived units with special names and symbols
