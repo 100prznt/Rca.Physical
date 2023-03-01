@@ -269,7 +269,12 @@ namespace Rca.Physical
         [AlternativeSymbolNotations("kg/m⋅s")]
         [Symbol("kg/m s")]
         [DisableAutoFit]
-        KilogramPerMetreSecond
+        KilogramPerMetreSecond,
+
+        [Dimension(PhysicalDimensions.SpecificVolume)]
+        [AlternativeSymbolNotations("m³/kg")]
+        [Symbol("m^3/kg")]
+        CubicmetrePerKilogram,
 
 
         #region SI derived units with special names and symbols

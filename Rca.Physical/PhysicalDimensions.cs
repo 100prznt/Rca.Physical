@@ -173,6 +173,12 @@ namespace Rca.Physical
         [QuotientOf(DynamicViscosity, Density)]
         KineticViscosity,
 
+
+        [BaseUnit(PhysicalUnits.CubicmetrePerKilogram)]
+        [Symbol("[nu]")]
+        [QuotientOf(Volume, Mass)]
+        SpecificVolume,
+
         #endregion
 
         #region Special "units" not SI confirm
