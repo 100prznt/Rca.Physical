@@ -280,6 +280,24 @@ namespace Rca.Physical
         [Symbol("kJ/kg")]
         KilojoulePerKilogram,
 
+        [Dimension(PhysicalDimensions.SurfaceTension)]
+        [AlternativeSymbolNotations("kg/s²")]
+        [Symbol("kg/s^2")]
+        KilogramPerSquareSecond,
+        [Dimension(PhysicalDimensions.SurfaceTension)]
+        [Scaling(1)]
+        [Symbol("N/m")]
+        NewtonPerMetre,
+        [Dimension(PhysicalDimensions.SurfaceTension)]
+        [AlternativeSymbolNotations("J/m²")]
+        [Scaling(1)]
+        [Symbol("J/m^2")]
+        JoulePerSquareMetre,
+        [Dimension(PhysicalDimensions.SurfaceTension)]
+        [Scaling(0.001)]
+        [Symbol("mN/m")]
+        MillinewtonPerMetre
+
         #region SI derived units with special names and symbols
 
         #endregion

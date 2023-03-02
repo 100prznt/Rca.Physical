@@ -67,4 +67,8 @@
 "SpecificVolume","CubicMetrePerKilogram","m^3/kg","","True","1","0"
 "SpecificEnergy","JoulePerKilogram","J/kg","","True","1","0"
 "SpecificEnergy","KilojoulePerKilogram","kJ/kg","","False","1000","0"
+"SurfaceTension","KilogramPerSquareSecond","kg/s^2","","True","1","0"
+"SurfaceTension","NewtonPerMetre","N/m","","False","1","0"
+"SurfaceTension","JoulePerSquareMetre","J/m^2","","False","1","0"
+"SurfaceTension","MillinewtonPerMetre","mN/m","","False","0,001","0"
 "NotDefined","NotDefined","NotDefined","","True","1","0"

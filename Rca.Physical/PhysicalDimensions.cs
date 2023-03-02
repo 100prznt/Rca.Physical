@@ -177,6 +177,11 @@ namespace Rca.Physical
         [Symbol("e")]
         [QuotientOf(Energy, Mass)]
         SpecificEnergy,
+        [BaseUnit(PhysicalUnits.KilogramPerSquareSecond)]
+        [Symbol("[sigma]")]
+        [QuotientOf(Force, Length)]
+        [QuotientOf(Energy, Area)]
+        SurfaceTension,
 
         #endregion
 
