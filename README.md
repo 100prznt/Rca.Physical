@@ -41,3 +41,6 @@ Rca.Physical is licensed under [MIT](http://www.opensource.org/licenses/mit-lice
 
 ## Contributions
 Contributions are welcome. Fork this repository and send a pull request if you have something useful to add.
+
+## Related Projects
+* [Rca.Physical.If97](https://github.com/100prznt/Rca.Physical.If97) - Property library for water and steam according to the industrial formulation IAPWS-IF97.
