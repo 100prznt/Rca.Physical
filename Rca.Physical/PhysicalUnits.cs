@@ -237,7 +237,7 @@ namespace Rca.Physical
         [Symbol("J s")]
         JouleSecond,
         [Dimension(PhysicalDimensions.Frequency)]
-        [AlternativeSymbolNotations("s^-1")]
+        [AlternativeSymbolNotations("s^-1", "1/s")]
         [Symbol("Hz")]
         Hertz,
         [Dimension(PhysicalDimensions.Entropy)]
@@ -254,12 +254,10 @@ namespace Rca.Physical
         [AlternativeSymbolNotations("W/m²")]
         [Symbol("W/m^2")]
         WattPerSquareMetre,
-
         [Dimension(PhysicalDimensions.KineticViscosity)]
         [AlternativeSymbolNotations("m²/s")]
         [Symbol("m^2/s")]
         SquareMetrePerSecond,
-
         [Dimension(PhysicalDimensions.DynamicViscosity)]
         [AlternativeSymbolNotations("Pa⋅s")]
         [Symbol("Pa s")]
@@ -270,12 +268,17 @@ namespace Rca.Physical
         [Symbol("kg/m s")]
         [DisableAutoFit]
         KilogramPerMetreSecond,
-
         [Dimension(PhysicalDimensions.SpecificVolume)]
         [AlternativeSymbolNotations("m³/kg")]
         [Symbol("m^3/kg")]
         CubicMetrePerKilogram,
-
+        [Dimension(PhysicalDimensions.SpecificEnergy)]
+        [Symbol("J/kg")]
+        JoulePerKilogram,
+        [Dimension(PhysicalDimensions.SpecificEnergy)]
+        [Scaling(1000)]
+        [Symbol("kJ/kg")]
+        KilojoulePerKilogram,
 
         #region SI derived units with special names and symbols
 

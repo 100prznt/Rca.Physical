@@ -13,7 +13,7 @@ namespace Rca.Physical.Helpers
 		/// </summary>
 		/// <param name="value">A number of CubicMetrePerKilograms</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
-		/// <returns>A <seealso cref="PhysicalValue"/> which represents a SpecificVolume of speciefied CubicmetrePerKilograms.</returns>
+		/// <returns>A <seealso cref="PhysicalValue"/> which represents a SpecificVolume of speciefied CubicMetrePerKilograms.</returns>
 		public static PhysicalValue FromCubicMetrePerKilogram(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.CubicMetrePerKilogram, scaling);
 
 	}

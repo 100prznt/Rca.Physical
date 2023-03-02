@@ -137,7 +137,6 @@ namespace Rca.Physical
         [Symbol("Q")]
         [ProductOf(Speed, Area)]
         VolumetricFlowRate,
-
         [BaseUnit(PhysicalUnits.JouleSecond)]
         [Symbol("S")]
         [ProductOf(Energy, Time)]
@@ -162,22 +161,22 @@ namespace Rca.Physical
         [Symbol("q")]
         [QuotientOf(Energy, Area)]
         HeatFluxDestiny,
-
         [BaseUnit(PhysicalUnits.PascalSecond)]
         [Symbol("[eta]")]
         [ProductOf(KineticViscosity, Density)]
         DynamicViscosity,
-
         [BaseUnit(PhysicalUnits.SquareMetrePerSecond)]
         [Symbol("[ny]")]
         [QuotientOf(DynamicViscosity, Density)]
         KineticViscosity,
-
-
         [BaseUnit(PhysicalUnits.CubicMetrePerKilogram)]
         [Symbol("[nu]")]
         [QuotientOf(Volume, Mass)]
         SpecificVolume,
+        [BaseUnit(PhysicalUnits.JoulePerKilogram)]
+        [Symbol("e")]
+        [QuotientOf(Energy, Mass)]
+        SpecificEnergy,
 
         #endregion
 
