@@ -53,5 +53,17 @@ namespace Rca.Physical.Tests
             Assert.AreEqual(0.5715, result.Value, 1E-6);
             Assert.AreEqual(PhysicalUnits.Millibar, result.Unit);
         }
+
+        [TestMethod]
+        public void ConvertAtmToBar()
+        {
+            var converter = new Converter();
+            var sourceValue = new PhysicalValue(1, PhysicalUnits.StandardAtmosphere);
+
+            var result = converter.Convert(sourceValue, PhysicalUnits.Bar);
+
+            Assert.AreEqual(1.013250, result.Value, 1E-6);
+            Assert.AreEqual(PhysicalUnits.Bar, result.Unit);
+        }
     }
 }

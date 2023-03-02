@@ -71,4 +71,5 @@
 "SurfaceTension","NewtonPerMetre","N/m","","False","1","0"
 "SurfaceTension","JoulePerSquareMetre","J/m^2","","False","1","0"
 "SurfaceTension","MillinewtonPerMetre","mN/m","","False","0,001","0"
+"Pressure","StandardAtmosphere","atm","","False","101325","0"
 "NotDefined","NotDefined","NotDefined","","True","1","0"

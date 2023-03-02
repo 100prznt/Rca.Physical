@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,28 +37,42 @@ namespace Rca.Physical.Io
 
         }
 
-        public void ExportUnitsAsCsv(string path)
+        public int ExportUnitsAsCsv(string path)
         {
+            int cnt = 0;
             using var sw = new StreamWriter(path);
             sw.WriteLine(UnitInfo.CsvHeader);
             foreach (var unit in Units)
+            {
                 sw.WriteLine(new UnitInfo(unit).ToCsvLine());
+                cnt++;
+            }
+
+            return cnt;
         }
 
-        public void ExportDerivativeFunctions(string path)
+        public int ExportDerivativeFunctions(string path)
         {
+            int cnt = 0;
             using var sw = new StreamWriter(path);
             sw.WriteLine(DerivativeFunctionInfo.CsvHeader);
             foreach (var function in Functions)
+            {
                 sw.WriteLine(new DerivativeFunctionInfo(function).ToCsvLine());
+                cnt++;
+            }
+
+            return cnt;
         }
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="directory"></param>
-        public void GenerateHelperClasses(string directory)
+        public int GenerateHelperClasses(string directory)
         {
+            var cnt = 0;
+
             if (Directory.Exists(directory))
             {
                 foreach (var dim in Dimensions)
@@ -89,13 +104,18 @@ namespace Rca.Physical.Io
                     }
                     sw.WriteLine("\t}");
                     sw.WriteLine("}");
+                    cnt++;
                 }
             }
+
+            return cnt;
         }
 
 #if DEBUG
-        public void ExportDerivativeFunctionArray(string path)
+        public int ExportDerivativeFunctionArray(string path)
         {
+            var cnt = 0;
+
             if (Directory.Exists(path[..path.LastIndexOf('\\')]))
             {
                 using var sw = new StreamWriter(path);
@@ -112,11 +132,16 @@ namespace Rca.Physical.Io
                 sw.WriteLine("\t\tinternal static FunctionDescription[] DerivativeFunctions = new FunctionDescription[]");
                 sw.WriteLine("\t\t{");
                 foreach (var function in Functions)
+                {
                     sw.WriteLine("\t\t\t" + function.ToCSharp() + ",");
+                    cnt++;
+                }
                 sw.WriteLine("\t\t};");
                 sw.WriteLine("\t}");
                 sw.WriteLine("}");
             }
+
+            return cnt;
         }
 #endif
     }

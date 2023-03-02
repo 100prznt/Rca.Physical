@@ -64,5 +64,13 @@ namespace Rca.Physical.Helpers
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a Pressure of speciefied MetresOfWaterGauges.</returns>
 		public static PhysicalValue FromMetresOfWaterGauge(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.MetresOfWaterGauge, scaling);
 
+		/// <summary>
+		/// Returns a <seealso cref="PhysicalValue"/> that represents a Pressure of speciefied StandardAtmospheres.
+		/// </summary>
+		/// <param name="value">A number of StandardAtmospheres</param>
+		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
+		/// <returns>A <seealso cref="PhysicalValue"/> which represents a Pressure of speciefied StandardAtmospheres.</returns>
+		public static PhysicalValue FromStandardAtmosphere(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.StandardAtmosphere, scaling);
+
 	}
 }

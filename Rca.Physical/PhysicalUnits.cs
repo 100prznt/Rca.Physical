@@ -296,7 +296,7 @@ namespace Rca.Physical
         [Dimension(PhysicalDimensions.SurfaceTension)]
         [Scaling(0.001)]
         [Symbol("mN/m")]
-        MillinewtonPerMetre
+        MillinewtonPerMetre,
 
         #region SI derived units with special names and symbols
 
@@ -313,6 +313,12 @@ namespace Rca.Physical
         #region Non-SI units accepted for use with SI
         //https://en.wikipedia.org/wiki/Non-SI_units_mentioned_in_the_SI
 
+        [Dimension(PhysicalDimensions.Pressure)]
+        [DisableAutoFit]
+        [Scaling(101325)]
+        [Symbol("atm")]
+        [ScaleSpecificSymbol(ScaleOfMeasurements.Absolute, "ata")]
+        StandardAtmosphere
         #endregion
     }
 }
