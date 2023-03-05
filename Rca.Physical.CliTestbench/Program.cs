@@ -19,6 +19,3 @@ Console.WriteLine(myCurrentValue.GetFittedPhysicalValue());
 // The example displays the following output to the console:
 //  7410 mV
 //  147 mA
-
-
-Console.ReadKey();

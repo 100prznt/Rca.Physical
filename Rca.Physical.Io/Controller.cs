@@ -37,6 +37,13 @@ namespace Rca.Physical.Io
 
         }
 
+        public string GetRcaPhysicalInfo()
+        {
+            var assemblyName = typeof(PhysicalValue).Assembly.GetName();
+
+            return assemblyName.FullName;
+        }
+
         public int ExportUnitsAsCsv(string path)
         {
             int cnt = 0;
@@ -93,13 +100,17 @@ namespace Rca.Physical.Io
                     sw.WriteLine("\t{");
                     foreach (var unit in dim.GetUnits())
                     {
+                        var units = unit.ToString();
+                        if (!unit.ToString().EndsWith('s'))
+                            units = $"{unit}s";
+
                         sw.WriteLine($"\t\t/// <summary>");
-                        sw.WriteLine($"\t\t/// Returns a <seealso cref=\"PhysicalValue\"/> that represents a {dim} of speciefied {unit}s.");
+                        sw.WriteLine($"\t\t/// Returns a <seealso cref=\"PhysicalValue\"/> that represents a {dim} of speciefied {units}.");
                         sw.WriteLine($"\t\t/// </summary>");
-                        sw.WriteLine($"\t\t/// <param name=\"value\">A number of {unit}s</param>");
+                        sw.WriteLine($"\t\t/// <param name=\"value\">A number of {units}</param>");
                         sw.WriteLine($"\t\t/// <param name=\"scaling\">Scaling for the returned <seealso cref=\"PhysicalValue\"/></param>");
-                        sw.WriteLine($"\t\t/// <returns>A <seealso cref=\"PhysicalValue\"/> which represents a {dim} of speciefied {unit}s.</returns>");
-                        sw.WriteLine($"\t\tpublic static PhysicalValue From{unit}(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.{unit}, scaling);");
+                        sw.WriteLine($"\t\t/// <returns>A <seealso cref=\"PhysicalValue\"/> which represents a {dim} of speciefied {units}.</returns>");
+                        sw.WriteLine($"\t\tpublic static PhysicalValue From{units}(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.{unit}, scaling);");
                         sw.WriteLine();
                     }
                     sw.WriteLine("\t}");
