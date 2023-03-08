@@ -14,7 +14,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of Joules</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a Energy of speciefied Joules.</returns>
-		public static PhysicalValue FromJoule(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.Joule, scaling);
+		public static PhysicalValue FromJoules(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.Joule, scaling);
 
 		/// <summary>
 		/// Returns a <seealso cref="PhysicalValue"/> that represents a Energy of speciefied NewtonMetres.
@@ -22,7 +22,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of NewtonMetres</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a Energy of speciefied NewtonMetres.</returns>
-		public static PhysicalValue FromNewtonMetre(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.NewtonMetre, scaling);
+		public static PhysicalValue FromNewtonMetres(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.NewtonMetre, scaling);
 
 	}
 }

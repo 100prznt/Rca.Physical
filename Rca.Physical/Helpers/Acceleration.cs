@@ -14,7 +14,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of MetrePerSecondSquareds</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a Acceleration of speciefied MetrePerSecondSquareds.</returns>
-		public static PhysicalValue FromMetrePerSecondSquared(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.MetrePerSecondSquared, scaling);
+		public static PhysicalValue FromMetrePerSecondSquareds(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.MetrePerSecondSquared, scaling);
 
 	}
 }

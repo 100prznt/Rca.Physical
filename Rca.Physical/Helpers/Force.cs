@@ -14,7 +14,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of Newtons</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a Force of speciefied Newtons.</returns>
-		public static PhysicalValue FromNewton(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.Newton, scaling);
+		public static PhysicalValue FromNewtons(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.Newton, scaling);
 
 	}
 }

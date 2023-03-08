@@ -14,7 +14,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of Metres</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a Length of speciefied Metres.</returns>
-		public static PhysicalValue FromMetre(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.Metre, scaling);
+		public static PhysicalValue FromMetres(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.Metre, scaling);
 
 		/// <summary>
 		/// Returns a <seealso cref="PhysicalValue"/> that represents a Length of speciefied Millimetres.
@@ -22,7 +22,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of Millimetres</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a Length of speciefied Millimetres.</returns>
-		public static PhysicalValue FromMillimetre(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.Millimetre, scaling);
+		public static PhysicalValue FromMillimetres(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.Millimetre, scaling);
 
 		/// <summary>
 		/// Returns a <seealso cref="PhysicalValue"/> that represents a Length of speciefied Kilometres.
@@ -30,7 +30,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of Kilometres</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a Length of speciefied Kilometres.</returns>
-		public static PhysicalValue FromKilometre(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.Kilometre, scaling);
+		public static PhysicalValue FromKilometres(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.Kilometre, scaling);
 
 		/// <summary>
 		/// Returns a <seealso cref="PhysicalValue"/> that represents a Length of speciefied Centimetres.
@@ -38,7 +38,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of Centimetres</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a Length of speciefied Centimetres.</returns>
-		public static PhysicalValue FromCentimetre(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.Centimetre, scaling);
+		public static PhysicalValue FromCentimetres(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.Centimetre, scaling);
 
 	}
 }

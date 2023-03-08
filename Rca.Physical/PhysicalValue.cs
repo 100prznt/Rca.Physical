@@ -660,6 +660,20 @@ namespace Rca.Physical
             return a.GetBaseValue() != b.GetBaseValue();
         }
 
+        public static PhysicalValue operator *(PhysicalValue a, int b) => a * (double)b;
+
+        public static PhysicalValue operator *(PhysicalValue a, double b) => new(a.Value * b, a.Unit);
+
+        public static PhysicalValue operator /(PhysicalValue a, int b) => a / (double)b;
+
+        public static PhysicalValue operator /(PhysicalValue a, double b)
+        {
+            if (b == 0)
+                return NaN;
+            else
+                return new(a.Value / b, a.Unit);
+        }
+
         #endregion Operator overloading
 
         #region InotifyPropertyChanged

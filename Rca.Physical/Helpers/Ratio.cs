@@ -14,7 +14,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of Percents</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a Ratio of speciefied Percents.</returns>
-		public static PhysicalValue FromPercent(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.Percent, scaling);
+		public static PhysicalValue FromPercents(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.Percent, scaling);
 
 		/// <summary>
 		/// Returns a <seealso cref="PhysicalValue"/> that represents a Ratio of speciefied PartsPerMillions.
@@ -22,7 +22,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of PartsPerMillions</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a Ratio of speciefied PartsPerMillions.</returns>
-		public static PhysicalValue FromPartsPerMillion(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.PartsPerMillion, scaling);
+		public static PhysicalValue FromPartsPerMillions(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.PartsPerMillion, scaling);
 
 	}
 }

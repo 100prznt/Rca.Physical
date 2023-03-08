@@ -14,7 +14,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of SquareMetrePerSeconds</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a KineticViscosity of speciefied SquareMetrePerSeconds.</returns>
-		public static PhysicalValue FromSquareMetrePerSecond(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.SquareMetrePerSecond, scaling);
+		public static PhysicalValue FromSquareMetrePerSeconds(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.SquareMetrePerSecond, scaling);
 
 	}
 }

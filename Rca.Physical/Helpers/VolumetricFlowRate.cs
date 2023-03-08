@@ -14,7 +14,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of CubicMetrePerSeconds</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a VolumetricFlowRate of speciefied CubicMetrePerSeconds.</returns>
-		public static PhysicalValue FromCubicMetrePerSecond(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.CubicMetrePerSecond, scaling);
+		public static PhysicalValue FromCubicMetrePerSeconds(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.CubicMetrePerSecond, scaling);
 
 		/// <summary>
 		/// Returns a <seealso cref="PhysicalValue"/> that represents a VolumetricFlowRate of speciefied LitrePerSeconds.
@@ -22,7 +22,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of LitrePerSeconds</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a VolumetricFlowRate of speciefied LitrePerSeconds.</returns>
-		public static PhysicalValue FromLitrePerSecond(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.LitrePerSecond, scaling);
+		public static PhysicalValue FromLitrePerSeconds(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.LitrePerSecond, scaling);
 
 		/// <summary>
 		/// Returns a <seealso cref="PhysicalValue"/> that represents a VolumetricFlowRate of speciefied LitrePerMinutes.
@@ -30,7 +30,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of LitrePerMinutes</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a VolumetricFlowRate of speciefied LitrePerMinutes.</returns>
-		public static PhysicalValue FromLitrePerMinute(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.LitrePerMinute, scaling);
+		public static PhysicalValue FromLitrePerMinutes(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.LitrePerMinute, scaling);
 
 		/// <summary>
 		/// Returns a <seealso cref="PhysicalValue"/> that represents a VolumetricFlowRate of speciefied CubicMetrePerHours.
@@ -38,7 +38,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of CubicMetrePerHours</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a VolumetricFlowRate of speciefied CubicMetrePerHours.</returns>
-		public static PhysicalValue FromCubicMetrePerHour(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.CubicMetrePerHour, scaling);
+		public static PhysicalValue FromCubicMetrePerHours(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.CubicMetrePerHour, scaling);
 
 	}
 }

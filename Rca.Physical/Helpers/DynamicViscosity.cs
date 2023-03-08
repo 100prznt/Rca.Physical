@@ -14,7 +14,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of PascalSeconds</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a DynamicViscosity of speciefied PascalSeconds.</returns>
-		public static PhysicalValue FromPascalSecond(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.PascalSecond, scaling);
+		public static PhysicalValue FromPascalSeconds(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.PascalSecond, scaling);
 
 		/// <summary>
 		/// Returns a <seealso cref="PhysicalValue"/> that represents a DynamicViscosity of speciefied KilogramPerMetreSeconds.
@@ -22,7 +22,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of KilogramPerMetreSeconds</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a DynamicViscosity of speciefied KilogramPerMetreSeconds.</returns>
-		public static PhysicalValue FromKilogramPerMetreSecond(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.KilogramPerMetreSecond, scaling);
+		public static PhysicalValue FromKilogramPerMetreSeconds(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.KilogramPerMetreSecond, scaling);
 
 	}
 }

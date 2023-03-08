@@ -14,7 +14,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of Euros</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a Costs of speciefied Euros.</returns>
-		public static PhysicalValue FromEuro(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.Euro, scaling);
+		public static PhysicalValue FromEuros(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.Euro, scaling);
 
 		/// <summary>
 		/// Returns a <seealso cref="PhysicalValue"/> that represents a Costs of speciefied UnitedStatesDollars.
@@ -22,14 +22,14 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of UnitedStatesDollars</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a Costs of speciefied UnitedStatesDollars.</returns>
-		public static PhysicalValue FromUnitedStatesDollar(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.UnitedStatesDollar, scaling);
+		public static PhysicalValue FromUnitedStatesDollars(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.UnitedStatesDollar, scaling);
 
 		/// <summary>
-		/// Returns a <seealso cref="PhysicalValue"/> that represents a Costs of speciefied SwissFrancss.
+		/// Returns a <seealso cref="PhysicalValue"/> that represents a Costs of speciefied SwissFrancs.
 		/// </summary>
-		/// <param name="value">A number of SwissFrancss</param>
+		/// <param name="value">A number of SwissFrancs</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
-		/// <returns>A <seealso cref="PhysicalValue"/> which represents a Costs of speciefied SwissFrancss.</returns>
+		/// <returns>A <seealso cref="PhysicalValue"/> which represents a Costs of speciefied SwissFrancs.</returns>
 		public static PhysicalValue FromSwissFrancs(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.SwissFrancs, scaling);
 
 	}

@@ -14,7 +14,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of JoulePerKelvins</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a Entropy of speciefied JoulePerKelvins.</returns>
-		public static PhysicalValue FromJoulePerKelvin(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.JoulePerKelvin, scaling);
+		public static PhysicalValue FromJoulePerKelvins(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.JoulePerKelvin, scaling);
 
 	}
 }

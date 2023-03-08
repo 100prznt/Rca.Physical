@@ -14,7 +14,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of MetrePerSeconds</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a Speed of speciefied MetrePerSeconds.</returns>
-		public static PhysicalValue FromMetrePerSecond(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.MetrePerSecond, scaling);
+		public static PhysicalValue FromMetrePerSeconds(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.MetrePerSecond, scaling);
 
 		/// <summary>
 		/// Returns a <seealso cref="PhysicalValue"/> that represents a Speed of speciefied MetrePerHours.
@@ -22,7 +22,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of MetrePerHours</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a Speed of speciefied MetrePerHours.</returns>
-		public static PhysicalValue FromMetrePerHour(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.MetrePerHour, scaling);
+		public static PhysicalValue FromMetrePerHours(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.MetrePerHour, scaling);
 
 		/// <summary>
 		/// Returns a <seealso cref="PhysicalValue"/> that represents a Speed of speciefied KilometrePerHours.
@@ -30,7 +30,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of KilometrePerHours</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a Speed of speciefied KilometrePerHours.</returns>
-		public static PhysicalValue FromKilometrePerHour(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.KilometrePerHour, scaling);
+		public static PhysicalValue FromKilometrePerHours(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.KilometrePerHour, scaling);
 
 	}
 }

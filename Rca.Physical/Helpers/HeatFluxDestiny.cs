@@ -14,7 +14,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of WattPerSquareMetres</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a HeatFluxDestiny of speciefied WattPerSquareMetres.</returns>
-		public static PhysicalValue FromWattPerSquareMetre(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.WattPerSquareMetre, scaling);
+		public static PhysicalValue FromWattPerSquareMetres(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.WattPerSquareMetre, scaling);
 
 	}
 }

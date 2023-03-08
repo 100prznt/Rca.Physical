@@ -14,7 +14,7 @@ namespace Rca.Physical.Helpers
 		/// <param name="value">A number of KilogramPerCubicMetres</param>
 		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
 		/// <returns>A <seealso cref="PhysicalValue"/> which represents a Density of speciefied KilogramPerCubicMetres.</returns>
-		public static PhysicalValue FromKilogramPerCubicMetre(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.KilogramPerCubicMetre, scaling);
+		public static PhysicalValue FromKilogramPerCubicMetres(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.KilogramPerCubicMetre, scaling);
 
 	}
 }
