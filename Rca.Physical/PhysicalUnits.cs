@@ -115,6 +115,11 @@ namespace Rca.Physical
         [Symbol("mm")]
         Millimetre,
         [Dimension(PhysicalDimensions.Length)]
+        [Scaling(0.000001)]
+        [AlternativeSymbolNotations("µm")]
+        [Symbol("um")]
+        Micrometre,
+        [Dimension(PhysicalDimensions.Length)]
         [Scaling(1000)]
         [Symbol("km")]
         Kilometre,

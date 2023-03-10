@@ -77,5 +77,17 @@ namespace Rca.Physical.Tests
             Assert.AreEqual(13571.59, result.Value, 1E-6);
             Assert.AreEqual(PhysicalUnits.Metre, result.Unit);
         }
+
+        [TestMethod]
+        public void ConvertMicrometreToMillimetre()
+        {
+            var converter = new Converter();
+            var sourceValue = new PhysicalValue(254, PhysicalUnits.Micrometre);
+
+            var result = converter.Convert(sourceValue, PhysicalUnits.Millimetre);
+
+            Assert.AreEqual(0.254, result.Value, 1E-4);
+            Assert.AreEqual(PhysicalUnits.Millimetre, result.Unit);
+        }
     }
 }

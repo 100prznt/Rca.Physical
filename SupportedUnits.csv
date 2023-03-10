@@ -25,6 +25,7 @@
 "Power","Pferdestaerken","PS","","False","735,49875","0"
 "Length","Metre","m","","True","1","0"
 "Length","Millimetre","mm","","False","0,001","0"
+"Length","Micrometre","um","","False","1E-06","0"
 "Length","Kilometre","km","","False","1000","0"
 "Length","Centimetre","cm","","False","0,01","0"
 "Pressure","MetresOfWaterGauge","mWS","m WS; mH2O; ","False","9806,65","0"
