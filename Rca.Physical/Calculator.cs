@@ -178,7 +178,6 @@ namespace Rca.Physical
         /// <exception cref="ArgumentException">The exponent must be 1 or larger.</exception>
         public static PhysicalValue Power(PhysicalValue x, int y)
         {
-
             if (TryPower(x, y, out var power))
                 return power;
             else
@@ -198,7 +197,7 @@ namespace Rca.Physical
             {
                 case 1:
                     power = x;
-                    break;
+                    return true;
                 case 2:
                     return TryMultiply(x, x, out power);
                 case 3:

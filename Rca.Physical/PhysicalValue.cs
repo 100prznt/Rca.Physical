@@ -524,7 +524,7 @@ namespace Rca.Physical
         #region Operator overloading
         public static PhysicalValue operator +(PhysicalValue a) => a;
 
-        public static PhysicalValue operator -(PhysicalValue a) => new PhysicalValue(-a.Value, a.Unit); //TODO: Also check scaling of Unit (absolute/relative)
+        public static PhysicalValue operator -(PhysicalValue a) => new(-a.Value, a.Unit); //TODO: Also check scaling of Unit (absolute/relative)
 
         public static PhysicalValue operator +(PhysicalValue summand1, PhysicalValue summand2)
         {
