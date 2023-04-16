@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Company>RC-Art Solutions</Company>
-    <Authors>rmmlr</Authors>
+    <Authors>Elias Ruemmler</Authors>
     <Description>Library to handle physical values, dimensions and units.</Description>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Copyright>Copyright © 2023 RC-Art Solutions (Ruemmler, Elias)</Copyright>
