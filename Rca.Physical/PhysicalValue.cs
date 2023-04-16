@@ -117,6 +117,10 @@ namespace Rca.Physical
             if (!Unit.IsDirectScalable())
                 return this;
 
+            if (IsNaN(this))
+                return this;
+
+
 
             var scaledValues = new Dictionary<PhysicalUnits, double>();
             var dimension = Dimension;
@@ -485,7 +489,12 @@ namespace Rca.Physical
         #region Internal services
         private string GetSymbolSuffix()
         {
-            return string.IsNullOrWhiteSpace(Unit.GetSymbol()) ? "" : " " + Unit.GetSymbol();
+            if (Unit == PhysicalUnits.NotDefined)
+                return string.Empty;
+
+            var symbol = Unit.GetSymbol();
+
+            return string.IsNullOrWhiteSpace(symbol) ? string.Empty : " " + symbol;
         }
 
         private static bool CheckForNotNull(PhysicalValue a, PhysicalValue b)
