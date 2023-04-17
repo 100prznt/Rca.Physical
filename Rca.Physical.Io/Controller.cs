@@ -132,7 +132,7 @@ namespace Rca.Physical.Io
 
             if (Directory.Exists(directory))
             {
-                using var sw = new StreamWriter($"{directory}\\PysicalUnitExtensions.cs");
+                using var sw = new StreamWriter($"{directory}\\PysicalValueExtensions.cs");
                 sw.WriteLine("// THIS FILE IS AUTO GENERATED!");
                 sw.WriteLine("// ALL CHANGES ARE OVERWRITTEN BY EXECUTION OF THE Rca.Physics.Io PROJECT");
                 sw.WriteLine();
