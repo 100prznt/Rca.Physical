@@ -122,6 +122,46 @@ namespace Rca.Physical.Io
             return cnt;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="directory"></param>
+        public int GeneratePhysicalUnitExtensions(string directory)
+        {
+            var cnt = 0;
+
+            if (Directory.Exists(directory))
+            {
+                using var sw = new StreamWriter($"{directory}\\PysicalUnitExtensions.cs");
+                sw.WriteLine("// THIS FILE IS AUTO GENERATED!");
+                sw.WriteLine("// ALL CHANGES ARE OVERWRITTEN BY EXECUTION OF THE Rca.Physics.Io PROJECT");
+                sw.WriteLine();
+                sw.WriteLine("namespace Rca.Physical");
+                sw.WriteLine("{");
+                sw.WriteLine("\t/// <summary>");
+                sw.WriteLine("\t/// Extensions for <seealso cref=\"PhysicalValue\"/> to check specific dimension.");
+                sw.WriteLine("\t/// </summary>");
+                sw.WriteLine($"\tpublic static class PysicalUnitExtensions");
+                sw.WriteLine("\t{");
+                foreach (var dim in Dimensions)
+                {
+                    if (dim == PhysicalDimensions.None || dim == PhysicalDimensions.NotDefined)
+                        continue;
+
+                    sw.WriteLine($"\t\t/// <summary>");
+                    sw.WriteLine($"\t\t/// The dimension of the PhysicalValue is <seealso cref=\"PhysicalDimensions.{dim}\"/>");
+                    sw.WriteLine($"\t\t/// </summary>");
+                    sw.WriteLine($"\t\tpublic static bool Is{dim}(this PhysicalValue value) => value.Dimension == PhysicalDimensions.{dim};");
+                    sw.WriteLine();
+                    cnt++;
+                }
+                sw.WriteLine("\t}");
+                sw.WriteLine("}");
+            }
+
+            return cnt;
+        }
+
 #if DEBUG
         public int ExportDerivativeFunctionArray(string path)
         {

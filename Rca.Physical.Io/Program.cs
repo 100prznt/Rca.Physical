@@ -28,6 +28,12 @@ Console.WriteLine("Generate " + controller.GenerateHelperClasses("..\\..\\..\\..
 Console.ResetColor();
 Console.WriteLine();
 
+Console.WriteLine("Generate extension class in Rca.Physical from Rca.Physical.PhysicalDimensions");
+Console.ForegroundColor = ConsoleColor.Red;
+Console.WriteLine("Generate " + controller.GeneratePhysicalUnitExtensions("..\\..\\..\\..\\Rca.Physical") + " extensions in class in Rca.Physical.PhysicalValueExtensions");
+Console.ResetColor();
+Console.WriteLine();
+
 #if DEBUG
 Console.WriteLine();
 Console.ForegroundColor = ConsoleColor.Magenta;

@@ -205,7 +205,7 @@ namespace Rca.Physical
         [Symbol("l/s")]
         LitrePerSecond,
         [Dimension(PhysicalDimensions.VolumetricFlowRate)]
-        [Scaling(0.06)]
+        [Scaling(1.66666666666667E-5)]
         [Symbol("l/min")]
         LitrePerMinute,
         [Dimension(PhysicalDimensions.VolumetricFlowRate)]
