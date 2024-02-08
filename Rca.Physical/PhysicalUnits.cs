@@ -94,6 +94,10 @@ namespace Rca.Physical
         [Symbol("W")]
         Watt,
         [Dimension(PhysicalDimensions.Power)]
+        [Scaling(0.001)]
+        [Symbol("mW")]
+        Milliwatt,
+        [Dimension(PhysicalDimensions.Power)]
         [Scaling(1000)]
         [Symbol("kW")]
         Kilowatt,

@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Rca.Physical.Tests
 {
     [TestClass]
-    public class ConverterPowerTests
+    public class DoubleExtensionsTests
     {
         [TestMethod]
         public void ConvertWattToKilowatt()

@@ -1,6 +1,7 @@
 ﻿using Rca.Physical.Dimensions;
 using Rca.Physical.Exceptions;
 using Rca.Physical.Units;
+using Rca.Physical.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -165,7 +166,9 @@ namespace Rca.Physical
             var targetBaseFactor = targetUnit.GetBaseFactor();
             var targetBaseOffset = targetUnit.GetBaseOffset();
 
-            return (GetBaseValue() - targetBaseOffset) / targetBaseFactor;
+            var result = (GetBaseValue() - targetBaseOffset) / targetBaseFactor;
+
+            return result.GetBitwiseRoundedValue();
         }
 
         /// <summary>
