@@ -241,7 +241,7 @@ namespace Rca.Physical
         [Dimension(PhysicalDimensions.LuminousIntensity)]
         [Symbol("cd")]
         Candela,
-        [Dimension(PhysicalDimensions.Action)]
+        [Dimension(PhysicalDimensions.MechanicalAction)]
         [AlternativeSymbolNotations("J⋅s")]
         [Symbol("J s")]
         JouleSecond,

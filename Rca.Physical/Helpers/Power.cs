@@ -17,6 +17,14 @@ namespace Rca.Physical.Helpers
 		public static PhysicalValue FromWatts(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.Watt, scaling);
 
 		/// <summary>
+		/// Returns a <seealso cref="PhysicalValue"/> that represents a Power of speciefied Milliwatts.
+		/// </summary>
+		/// <param name="value">A number of Milliwatts</param>
+		/// <param name="scaling">Scaling for the returned <seealso cref="PhysicalValue"/></param>
+		/// <returns>A <seealso cref="PhysicalValue"/> which represents a Power of speciefied Milliwatts.</returns>
+		public static PhysicalValue FromMilliwatts(double value, ScaleOfMeasurements scaling = ScaleOfMeasurements.NotDefined) => new(value, PhysicalUnits.Milliwatt, scaling);
+
+		/// <summary>
 		/// Returns a <seealso cref="PhysicalValue"/> that represents a Power of speciefied Kilowatts.
 		/// </summary>
 		/// <param name="value">A number of Kilowatts</param>

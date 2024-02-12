@@ -140,7 +140,7 @@ namespace Rca.Physical
         [BaseUnit(PhysicalUnits.JouleSecond)]
         [Symbol("S")]
         [ProductOf(Energy, Time)]
-        Action,
+        MechanicalAction,
         [BaseUnit(PhysicalUnits.Hertz)]
         [Symbol("f")]
         Frequency,

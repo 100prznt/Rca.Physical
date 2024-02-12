@@ -1,7 +1,6 @@
 ﻿using Rca.Physical.Dimensions;
 using Rca.Physical.Exceptions;
 using Rca.Physical.Units;
-using Rca.Physical.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,7 +23,7 @@ namespace Rca.Physical
         #endregion Members
 
         #region Fields
-        private string DefaultFormattedValue => Value.ToString() + GetSymbolSuffix();
+        private string DefaultFormattedValue => Value.ToString("0.################") + GetSymbolSuffix();
 
         #endregion Fields
 
@@ -166,9 +165,7 @@ namespace Rca.Physical
             var targetBaseFactor = targetUnit.GetBaseFactor();
             var targetBaseOffset = targetUnit.GetBaseOffset();
 
-            var result = (GetBaseValue() - targetBaseOffset) / targetBaseFactor;
-
-            return result.GetBitwiseRoundedValue();
+            return (GetBaseValue() - targetBaseOffset) / targetBaseFactor;
         }
 
         /// <summary>
