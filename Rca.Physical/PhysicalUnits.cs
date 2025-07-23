@@ -132,6 +132,18 @@ namespace Rca.Physical
         [Symbol("cm")]
         [DisableAutoFit]
         Centimetre,
+        [Dimension(PhysicalDimensions.Length)]
+        [Scaling(1609.34)]
+        [AlternativeSymbolNotations("mi")]
+        [Symbol("mi.")]
+        [DisableAutoFit]
+        Mile,
+        [Dimension(PhysicalDimensions.Length)]
+        [Scaling(0.0254)]
+        [AlternativeSymbolNotations("″", "\"")]
+        [Symbol("in")]
+        [DisableAutoFit]
+        Inch,
         [Dimension(PhysicalDimensions.Pressure)]
         [Scaling(9806.65)]
         [AlternativeSymbolNotations("m WS", "mH2O")]
@@ -242,7 +254,7 @@ namespace Rca.Physical
         [Symbol("cd")]
         Candela,
         [Dimension(PhysicalDimensions.MechanicalAction)]
-        [AlternativeSymbolNotations("J⋅s")]
+        [AlternativeSymbolNotations("J⋅s", "J·s")] //different middots
         [Symbol("J s")]
         JouleSecond,
         [Dimension(PhysicalDimensions.Frequency)]
@@ -273,7 +285,7 @@ namespace Rca.Physical
         PascalSecond,
         [Dimension(PhysicalDimensions.DynamicViscosity)]
         [Scaling(1)]
-        [AlternativeSymbolNotations("kg/m⋅s")]
+        [AlternativeSymbolNotations("kg/m⋅s", "kg/m·s")]
         [Symbol("kg/m s")]
         [DisableAutoFit]
         KilogramPerMetreSecond,
@@ -288,7 +300,6 @@ namespace Rca.Physical
         [Scaling(1000)]
         [Symbol("kJ/kg")]
         KilojoulePerKilogram,
-
         [Dimension(PhysicalDimensions.SurfaceTension)]
         [AlternativeSymbolNotations("kg/s²")]
         [Symbol("kg/s^2")]

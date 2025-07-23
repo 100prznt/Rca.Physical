@@ -20,8 +20,8 @@ namespace Rca.Physical
         /// Buffer to hold the unit symbol for the units.
         /// <para/><see langword="key"/>: symbol or notation string; <see langword="value"/>: <see cref="PhysicalUnits"/>
         /// </summary>
-        internal static ConcurrentDictionary<string, PhysicalUnits> UnitsSymbolBuffer;
-        internal static bool BufferIsInitialized = false;
+        private static ConcurrentDictionary<string, PhysicalUnits> UnitsSymbolBuffer = new();
+        private static bool BufferIsInitialized = false;
 
 
         #region Members

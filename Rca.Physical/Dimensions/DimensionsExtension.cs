@@ -12,12 +12,10 @@ namespace Rca.Physical.Dimensions
 {
     public static class DimensionsExtension
     {
-        private static ConcurrentDictionary<PhysicalDimensions, PhysicalUnits> DimensionsBaseUnitBuffer = new ConcurrentDictionary<PhysicalDimensions, PhysicalUnits>();
-        private static ConcurrentDictionary<PhysicalDimensions, PhysicalUnits[]> DimensionsUnitsBuffer = new ConcurrentDictionary<PhysicalDimensions, PhysicalUnits[]>();
-        private static ConcurrentDictionary<PhysicalDimensions, string[]> DimensionsSymbolsBuffer = new ConcurrentDictionary<PhysicalDimensions, string[]>();
-        private static ConcurrentDictionary<PhysicalDimensions, FunctionDescription[]> DimensionsDerivationFunctionsBuffer = new ConcurrentDictionary<PhysicalDimensions, FunctionDescription[]>();
-
-
+        private static ConcurrentDictionary<PhysicalDimensions, PhysicalUnits> DimensionsBaseUnitBuffer = new();
+        private static ConcurrentDictionary<PhysicalDimensions, PhysicalUnits[]> DimensionsUnitsBuffer = new();
+        private static ConcurrentDictionary<PhysicalDimensions, string[]> DimensionsSymbolsBuffer = new();
+        private static ConcurrentDictionary<PhysicalDimensions, FunctionDescription[]> DimensionsDerivationFunctionsBuffer = new();
 
         /// <summary>
         /// Returns the base unit.

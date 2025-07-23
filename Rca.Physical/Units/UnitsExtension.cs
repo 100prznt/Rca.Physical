@@ -9,11 +9,11 @@ namespace Rca.Physical.Units
 {
     public static class UnitsExtension
     {
-        private static ConcurrentDictionary<PhysicalUnits, PhysicalDimensions> UnitsDimensionBuffer = new ConcurrentDictionary<PhysicalUnits, PhysicalDimensions>();
-        private static ConcurrentDictionary<PhysicalUnits, string> UnitsSymbolBuffer = new ConcurrentDictionary<PhysicalUnits, string>();
-        private static ConcurrentDictionary<PhysicalUnits, ScalingAttribute> UnitsScalingBuffer = new ConcurrentDictionary<PhysicalUnits, ScalingAttribute>();
-        private static ConcurrentDictionary<PhysicalUnits, bool> UnitsDisableAutoFitBuffer = new ConcurrentDictionary<PhysicalUnits, bool>();
-        private static ConcurrentDictionary<PhysicalUnits, string[]> UnitsAlternativeSymbolNotationsBuffer = new ConcurrentDictionary<PhysicalUnits, string[]>();
+        private static ConcurrentDictionary<PhysicalUnits, PhysicalDimensions> UnitsDimensionBuffer = new();
+        private static ConcurrentDictionary<PhysicalUnits, string> UnitsSymbolBuffer = new();
+        private static ConcurrentDictionary<PhysicalUnits, ScalingAttribute> UnitsScalingBuffer = new();
+        private static ConcurrentDictionary<PhysicalUnits, bool> UnitsDisableAutoFitBuffer = new();
+        private static ConcurrentDictionary<PhysicalUnits, string[]> UnitsAlternativeSymbolNotationsBuffer = new();
 
         /// <summary>
         /// Returns the unit symbol.

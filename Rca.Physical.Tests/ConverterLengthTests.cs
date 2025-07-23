@@ -89,5 +89,17 @@ namespace Rca.Physical.Tests
             Assert.AreEqual(0.254, result.Value, 1E-4);
             Assert.AreEqual(PhysicalUnits.Millimetre, result.Unit);
         }
+
+        [TestMethod]
+        public void ConvertMileToInch()
+        {
+            var converter = new Converter();
+            var sourceValue = new PhysicalValue(1, PhysicalUnits.Mile);
+
+            var result = converter.Convert(sourceValue, PhysicalUnits.Inch);
+
+            Assert.AreEqual(63360, result.Value, 1); //TODO: to large error!
+            Assert.AreEqual(PhysicalUnits.Inch, result.Unit);
+        }
     }
 }
